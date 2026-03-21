@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AutoForge — 现有框架的超级增效引擎 | 告别人工适配</title>
+  <meta name="description" content="AutoForge 无缝接入您的模块化设备库，将 3-5 天的非标胶水代码、权限配置与 MES 联调时间，压缩至 10 分钟。无需推翻现有架构。" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar" id="navbar">
+    <a href="#" class="nav-brand">
+      <div class="brand-mark">AF</div>
+      <span>AutoForge</span>
+    </a>
+    <ul class="nav-menu">
+      <li><a href="#pain">价值场景</a></li>
+      <li><a href="#mes">MES 方案</a></li>
+      <li><a href="#workflow">工作流</a></li>
+      <li><a href="#cta" class="nav-cta-btn">预约演示</a></li>
+    </ul>
+  </nav>
+
+  <!-- ===================================================
+       SECTION 1 — HERO: 直击"最后一公里"痛点
+       =================================================== -->
+  <section class="hero" id="hero">
+    <div class="hero-grid-bg"></div>
+    <div class="hero-blob hero-blob-1"></div>
+    <div class="hero-blob hero-blob-2"></div>
+    <div class="hero-blob hero-blob-3"></div>
+
+    <div class="container">
+      <!-- Left -->
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span class="badge-pulse"></span>
+          面向成熟框架企业 · 非侵入式 AI 增强
+        </div>
+
+        <h1>
+          让您的标准化框架，<br />
+          彻底告别<span class="gradient-text">"人工适配"</span>的阵痛。
+        </h1>
+
+        <p class="hero-desc">
+          无需推翻现有架构。AutoForge 无缝接入公司的模块化设备库，将
+          <strong>3-5 天的非标胶水代码、权限配置与 MES 联调时间</strong>，
+          压缩至一杯咖啡的时间。
+        </p>
+
+        <div class="hero-actions">
+          <button class="btn-fill" id="btn-demo">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="5 3 19 12 5 21 5 3" />
+            </svg>
+            预约专属演示
+          </button>
+          <button class="btn-outline" id="btn-whitepaper">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" />
+              <polyline points="14 2 14 8 20 8" />
+            </svg>
+            下载白皮书
+          </button>
+        </div>
+
+        <div class="hero-stats">
+          <div class="stat-item">
+            <div class="stat-value blue" data-target="10">0<span class="stat-unit">分钟</span></div>
+            <div class="stat-label">适配一台新机型</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-value green">100<span class="stat-unit">%</span></div>
+            <div class="stat-label">代码风格统一</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-value amber">0<span class="stat-unit">遗漏</span></div>
+            <div class="stat-label">报警/权限全覆盖</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Puzzle Animation -->
+      <div class="hero-visual">
+        <div class="puzzle-container">
+          <!-- Scan beam -->
+          <div class="scan-beam"></div>
+
+          <!-- Floating pieces (non-standard fragments) -->
+          <div class="puzzle-piece piece-1" id="pp1">I/O_Map.xlsx</div>
+          <div class="puzzle-piece piece-2" id="pp2">alarm_matrix[]</div>
+          <div class="puzzle-piece piece-3" id="pp3">MES_Auth.json</div>
+          <div class="puzzle-piece piece-4" id="pp4">permission_tree</div>
+          <div class="puzzle-piece piece-5" id="pp5">viewmodel_bind</div>
+
+          <!-- Base framework -->
+          <div class="puzzle-base">
+            <div class="base-label">公司核心框架 · 稳如泰山</div>
+            <div class="base-grid">
+              <div class="base-block">MotionLib</div>
+              <div class="base-block">VisionLib</div>
+              <div class="base-block">UI Kit</div>
+              <div class="base-block">IODriver</div>
+              <div class="base-block">Logger</div>
+              <div class="base-block">Config</div>
+              <div class="base-block">DataBus</div>
+              <div class="base-block">Security</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================
+       SECTION 2 — PAIN → SOLUTION
+       =================================================== -->
+  <section class="pain-section" id="pain">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-tag">Value Proposition</div>
+        <h2 class="section-title">为什么现成框架依然需要 AI 增强？</h2>
+        <p class="section-subtitle">
+          框架解决了 80% 的标准化问题。但剩下 20% 的非标适配、人为遗漏和 MES 对接，
+          正在吞噬您最宝贵的工程师时间。
+        </p>
+      </div>
+
+      <div class="pain-grid">
+        <!-- Card 1 -->
+        <div class="pain-card reveal stagger-1">
+          <div class="pain-card-top">
+            <div class="pain-icon">🎨</div>
+            <div class="pain-label">Pain Point #1</div>
+            <div class="pain-title">代码风格碎裂</div>
+            <div class="pain-desc">
+              不同工程师适配非标动作时风格各异，命名混乱，异常捕获缺失。离职交接如同灾难。
+            </div>
+          </div>
+          <div class="card-divider"><span class="arrow-down">↓</span></div>
+          <div class="pain-card-bottom">
+            <div class="solution-label">AutoForge 赋能</div>
+            <div class="solution-title">100% 绝对统一</div>
+            <div class="solution-desc">
+              AI 严格学习贵司编码规范模板。命名、异常捕获、日志注入 100% 像同一位最严谨的总工写出来的。
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="pain-card reveal stagger-2">
+          <div class="pain-card-top">
+            <div class="pain-icon">⚠️</div>
+            <div class="pain-label">Pain Point #2</div>
+            <div class="pain-title">人为遗漏风险</div>
+            <div class="pain-desc">
+              赶交期时极易漏写边缘气缸的防撞报警或操作员降级权限，导致现场客诉甚至安全事故。
+            </div>
+          </div>
+          <div class="card-divider"><span class="arrow-down">↓</span></div>
+          <div class="pain-card-bottom">
+            <div class="solution-label">AutoForge 赋能</div>
+            <div class="solution-title">穷举式安全生成</div>
+            <div class="solution-desc">
+              基于硬件拓扑，AI 强制全量状态机遍历，自动生成所有极限报警逻辑与权限树。消灭"工程师的粗心"。
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="pain-card reveal stagger-3">
+          <div class="pain-card-top">
+            <div class="pain-icon">🧑‍💻</div>
+            <div class="pain-label">Pain Point #3</div>
+            <div class="pain-title">软件人力瓶颈</div>
+            <div class="pain-desc">
+              资深大牛被困在改点位、调 UI 等低级适配中。新机型排期极其困难，核心研发被搁置。
+            </div>
+          </div>
+          <div class="card-divider"><span class="arrow-down">↓</span></div>
+          <div class="pain-card-bottom">
+            <div class="solution-label">AutoForge 赋能</div>
+            <div class="solution-title">释放核心研发算力</div>
+            <div class="solution-desc">
+              初级工程师导入 I/O 表和组件清单，用自然语言生成适配代码。让大牛回归核心算法研发。
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================
+       SECTION 3 — MES NIGHTMARE KILLER
+       =================================================== -->
+  <section class="mes-section" id="mes">
+    <div class="container">
+      <div class="mes-layout">
+        <!-- Left: Content -->
+        <div class="mes-content reveal-left">
+          <div class="section-tag">MES Integration</div>
+          <h2>连线即上云，<br />告别 <span class="highlight">100 页 MES 接口文档。</span></h2>
+          <p class="mes-lead">
+            扔进甲方提供的 API 文档，AutoForge 在 3 分钟内为您生成 100% 贴合现有框架的
+            MES 通信类、数据映射关系与断点续传逻辑。
+          </p>
+
+          <div class="mes-features">
+            <div class="mes-feature">
+              <div class="mes-feature-icon">📄</div>
+              <div>
+                <div class="mes-feature-title">文档即代码 (Doc-to-Code)</div>
+                <div class="mes-feature-desc">
+                  大模型深度阅读 Swagger/PDF 文档，自动生成包含鉴权、Token 刷新的全套 HTTP/MQTT 通讯模块。
+                </div>
+              </div>
+            </div>
+            <div class="mes-feature">
+              <div class="mes-feature-icon">🛡️</div>
+              <div>
+                <div class="mes-feature-title">异步沙盒，绝不卡机 (IT/OT Decoupling)</div>
+                <div class="mes-feature-desc">
+                  自动隔离控制线程与网络线程。厂区网络再烂，主轴节拍照样全速跑。
+                </div>
+              </div>
+            </div>
+            <div class="mes-feature">
+              <div class="mes-feature-icon">📦</div>
+              <div>
+                <div class="mes-feature-title">断网本地缓存 (Auto-Resume)</div>
+                <div class="mes-feature-desc">
+                  自动生成 SQLite 本地转储逻辑。网络中断数据自动落盘，恢复后静默续传，"一条不丢"。
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Code Panel -->
+        <div class="mes-code-panel reveal-right" id="mes-code-panel">
+          <div class="code-panel-header">
+            <span class="code-dot r"></span>
+            <span class="code-dot y"></span>
+            <span class="code-dot g"></span>
+            <span class="code-panel-title">MesAsyncClient.cs — AI 生成</span>
+          </div>
+          <div class="code-panel-body" id="mes-terminal">
+            <!-- Lines injected by JS -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================
+       SECTION 4 — WORKFLOW (4 Steps)
+       =================================================== -->
+  <section class="workflow-section" id="workflow">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-tag">How it Works</div>
+        <h2 class="section-title">非侵入式，四步上线</h2>
+        <p class="section-subtitle">
+          不动底层一行代码。从导入资产到编译交付，全程无痛接入。
+        </p>
+      </div>
+
+      <div class="workflow-steps reveal" id="workflow-steps">
+        <div class="workflow-connector">
+          <div class="workflow-connector-fill" id="wf-fill"></div>
+        </div>
+
+        <!-- Step 1 -->
+        <div class="step-card" data-step="1">
+          <div class="step-number">
+            <span class="step-icon">📂</span>
+            <span class="step-idx">1</span>
+          </div>
+          <div class="step-title">导入资产</div>
+          <div class="step-desc">将贵司的标准 UI 控件库、硬件驱动注册到 AutoForge 环境</div>
+          <div class="step-output">Ingest</div>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="step-card" data-step="2">
+          <div class="step-number">
+            <span class="step-icon">🧩</span>
+            <span class="step-idx">2</span>
+          </div>
+          <div class="step-title">意图拼装</div>
+          <div class="step-desc">输入新订单差异："新增两个 CCD 飞拍工位，复用视觉插件"</div>
+          <div class="step-output">Assemble</div>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="step-card" data-step="3">
+          <div class="step-number">
+            <span class="step-icon">⚡</span>
+            <span class="step-idx">3</span>
+          </div>
+          <div class="step-title">生成胶水代码</div>
+          <div class="step-desc">精准生成实例化对象、ViewModel 绑定、I/O 监听等枯燥代码</div>
+          <div class="step-output">Generate</div>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="step-card" data-step="4">
+          <div class="step-number">
+            <span class="step-icon">🚀</span>
+            <span class="step-idx">4</span>
+          </div>
+          <div class="step-title">完美编译</div>
+          <div class="step-desc">代码无缝合并贵司 .sln 工程，一键编译，直接跑机</div>
+          <div class="step-output">Compile & Run</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================
+       SECTION 5 — BOSS QUOTE + ROI + CTA
+       =================================================== -->
+  <section class="cta-section" id="cta">
+    <div class="cta-glow-bg"></div>
+    <div class="container">
+      <!-- Quote -->
+      <div class="quote-block reveal">
+        <div class="quote-text">
+          "高级工程师的时间，应该用来研发你们下一代的高精度视觉插件和核心算法，
+          而不是被当成 <span class="quote-highlight">'JSON 翻译机'</span> 和
+          <span class="quote-highlight">'胶水代码修补匠'</span>。<br /><br />
+          引入 AutoForge，<strong>您不需要推翻现有的任何框架</strong>。
+          您原本需要一个高级工程师干 5 天的苦力活，
+          <strong>现在一个初级助理 10 分钟就能跑通</strong>。"
+        </div>
+        <div class="quote-author">
+          <div class="quote-avatar">AF</div>
+          <div>
+            <div class="quote-name">AutoForge 解决方案团队</div>
+            <div class="quote-role">面向 Top 100 设备商的专属方案</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ROI -->
+      <div class="roi-stats reveal">
+        <div class="roi-item">
+          <div class="roi-value blue" id="roi-1">30x</div>
+          <div class="roi-label">适配效率提升</div>
+        </div>
+        <div class="roi-item">
+          <div class="roi-value green" id="roi-2">100%</div>
+          <div class="roi-label">报警/权限覆盖率</div>
+        </div>
+        <div class="roi-item">
+          <div class="roi-value amber" id="roi-3">0</div>
+          <div class="roi-label">对现有框架的侵入</div>
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <div class="final-cta reveal">
+        <h2>让您最贵的人才，只做最值钱的事</h2>
+        <p>预约一次 30 分钟的专属演示，看 AutoForge 如何融入您的框架</p>
+
+        <div class="cta-btn-group">
+          <button class="btn-glow" id="btn-final-demo">
+            <span class="pulse"></span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="5 3 19 12 5 21 5 3" />
+            </svg>
+            预约专属演示
+          </button>
+          <button class="btn-ghost" id="btn-final-wp">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4" />
+              <polyline points="7 10 12 15 17 10" />
+              <line x1="12" y1="15" x2="12" y2="3" />
+            </svg>
+            下载技术白皮书
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer">
+    <div class="container">
+      <ul class="footer-nav">
+        <li><a href="#">文档中心</a></li>
+        <li><a href="#">GitHub</a></li>
+        <li><a href="#">API 参考</a></li>
+        <li><a href="#">合规认证</a></li>
+        <li><a href="#">隐私政策</a></li>
+      </ul>
+      <div class="footer-copy">© 2026 AutoForge. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+
+</html>
