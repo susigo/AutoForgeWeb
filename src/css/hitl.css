@@ -60,7 +60,9 @@
 }
 
 .hitl-node-icon {
-  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   margin-bottom: 4px;
 }
 
@@ -159,7 +161,13 @@
 }
 
 .principle-icon {
-  font-size: 1.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  background: var(--blue-subtle);
+  border-radius: var(--radius-sm);
   margin-bottom: 16px;
 }
 

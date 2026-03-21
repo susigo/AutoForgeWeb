@@ -64,7 +64,9 @@
 }
 
 .compare-icon {
-  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   margin-bottom: 12px;
 }
 
@@ -121,12 +123,11 @@
   width: 24px;
   height: 24px;
   border-radius: 50%;
-  display: grid;
-  place-items: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   flex-shrink: 0;
   margin-top: 2px;
-  font-size: 0.7rem;
-  font-weight: 900;
 }
 .compare-item-icon.fail {
   background: var(--red-subtle);
@@ -165,8 +166,14 @@
 }
 
 .insight-icon {
-  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   flex-shrink: 0;
+  width: 52px;
+  height: 52px;
+  background: rgba(245, 158, 11, 0.08);
+  border-radius: var(--radius-sm);
 }
 
 .insight-title {

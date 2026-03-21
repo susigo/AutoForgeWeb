@@ -82,6 +82,46 @@ button { cursor: pointer; border: none; font-family: var(--font-body); }
 /* --- Layout --- */
 .container { max-width: var(--container); margin: 0 auto; padding: 0 36px; }
 
+/* --- Lucide Icon System --- */
+[data-lucide] {
+  display: inline-block;
+  vertical-align: middle;
+}
+/* Default icon in icon containers */
+.pain-icon svg,
+.mes-feature-icon svg,
+.hitl-node-icon svg,
+.principle-icon svg,
+.tech-core-icon svg,
+.compare-icon svg,
+.insight-icon svg,
+.step-icon svg {
+  width: 1em;
+  height: 1em;
+  stroke-width: 1.8;
+}
+/* Size scales for different containers */
+.pain-icon svg { width: 28px; height: 28px; color: inherit; }
+.mes-feature-icon svg { width: 22px; height: 22px; color: var(--blue-light); }
+.hitl-node-icon svg { width: 32px; height: 32px; }
+.principle-icon svg { width: 28px; height: 28px; color: var(--blue-light); }
+.tech-core-icon svg { width: 26px; height: 26px; color: var(--blue-light); }
+.compare-icon svg { width: 32px; height: 32px; }
+.compare-bad .compare-icon svg { color: var(--red); }
+.compare-good .compare-icon svg { color: var(--green); }
+.insight-icon svg { width: 32px; height: 32px; color: var(--amber); }
+.step-icon svg { width: 28px; height: 28px; color: var(--blue-light); }
+
+/* Inline icon helper (for labels) */
+.lucide-inline { width: 16px; height: 16px; vertical-align: -2px; margin-right: 4px; }
+/* Small icons (compare list items) */
+.lucide-xs { width: 12px; height: 12px; }
+.lucide-sm { width: 14px; height: 14px; }
+
+/* HITL node icon colors */
+.hitl-ai .hitl-node-icon svg { color: var(--blue-light); }
+.hitl-human .hitl-node-icon svg { color: var(--green-light); }
+
 /* --- Animations --- */
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(50px); }
@@ -455,7 +495,12 @@ button { cursor: pointer; border: none; font-family: var(--font-body); }
   background: var(--red-subtle);
   border-bottom: 1px solid rgba(239,68,68,0.1);
 }
-.pain-icon { font-size: 1.8rem; margin-bottom: 12px; }
+.pain-icon {
+  width: 48px; height: 48px;
+  display: flex; align-items: center; justify-content: center;
+  background: var(--red-subtle); border-radius: var(--radius-sm);
+  margin-bottom: 14px; color: var(--red-light);
+}
 .pain-label {
   font-family: var(--font-mono); font-size: 0.65rem; color: var(--red);
   text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px;
@@ -495,9 +540,10 @@ button { cursor: pointer; border: none; font-family: var(--font-body); }
   position: absolute; top: -14px;
   width: 28px; height: 28px;
   background: var(--bg-card); border: 1px solid var(--border);
-  border-radius: 50%; display: grid; place-items: center;
-  font-size: 0.8rem; color: var(--text-muted); z-index: 2;
+  border-radius: 50%; display: flex; align-items: center; justify-content: center;
+  color: var(--text-muted); z-index: 2;
 }
+.card-divider .arrow-down svg { width: 14px; height: 14px; }
 
 /* ========================
    SECTION 3 — MES NIGHTMARE KILLER
@@ -539,7 +585,7 @@ button { cursor: pointer; border: none; font-family: var(--font-body); }
 .mes-feature-icon {
   width: 44px; height: 44px; flex-shrink: 0;
   background: var(--blue-subtle); border-radius: var(--radius-sm);
-  display: grid; place-items: center; font-size: 1.3rem;
+  display: flex; align-items: center; justify-content: center;
 }
 .mes-feature-title {
   font-size: 0.95rem; font-weight: 700; margin-bottom: 4px;
@@ -643,7 +689,7 @@ button { cursor: pointer; border: none; font-family: var(--font-body); }
   border-color: var(--blue);
   box-shadow: 0 0 36px var(--blue-glow);
 }
-.step-number .step-icon { font-size: 1.8rem; margin-bottom: 2px; }
+.step-number .step-icon { display: flex; align-items: center; justify-content: center; margin-bottom: 2px; }
 .step-number .step-idx {
   position: absolute; top: -6px; right: -6px;
   width: 24px; height: 24px; border-radius: 50%;

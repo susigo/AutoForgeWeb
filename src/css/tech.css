@@ -30,6 +30,13 @@
   font-family: var(--font-mono);
   margin-bottom: 16px;
   letter-spacing: 0.5px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.tech-layer-label svg {
+  width: 18px;
+  height: 18px;
 }
 
 .tech-layer-input {
@@ -137,8 +144,14 @@
 }
 
 .tech-core-icon {
-  font-size: 1.5rem;
-  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  background: var(--blue-subtle);
+  border-radius: var(--radius-sm);
+  margin-bottom: 14px;
 }
 
 .tech-core-title {

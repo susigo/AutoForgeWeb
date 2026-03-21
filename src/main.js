@@ -5,6 +5,11 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
+  // Initialize Lucide SVG icons
+  if (window.lucide) {
+    lucide.createIcons();
+  }
+
   initNavbar();
   initScrollReveal();
   initPuzzlePieces();

@@ -10,6 +10,8 @@
   <link rel="stylesheet" href="css/hitl.css" />
   <link rel="stylesheet" href="css/compare.css" />
   <link rel="stylesheet" href="css/tech.css" />
+  <!-- Lucide Icons — modern, clean SVG icon library -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
 </head>
 
 <body>
@@ -142,14 +144,14 @@
         <!-- Card 1 -->
         <div class="pain-card reveal stagger-1">
           <div class="pain-card-top">
-            <div class="pain-icon">🎨</div>
+            <div class="pain-icon"><i data-lucide="palette"></i></div>
             <div class="pain-label">Pain Point #1</div>
             <div class="pain-title">代码风格碎裂</div>
             <div class="pain-desc">
               不同工程师适配非标动作时风格各异，命名混乱，异常捕获缺失。离职交接如同灾难。
             </div>
           </div>
-          <div class="card-divider"><span class="arrow-down">↓</span></div>
+          <div class="card-divider"><span class="arrow-down"><i data-lucide="chevron-down" class="lucide-sm"></i></span></div>
           <div class="pain-card-bottom">
             <div class="solution-label">AutoForge 赋能</div>
             <div class="solution-title">100% 绝对统一</div>
@@ -162,14 +164,14 @@
         <!-- Card 2 -->
         <div class="pain-card reveal stagger-2">
           <div class="pain-card-top">
-            <div class="pain-icon">⚠️</div>
+            <div class="pain-icon"><i data-lucide="alert-triangle"></i></div>
             <div class="pain-label">Pain Point #2</div>
             <div class="pain-title">人为遗漏风险</div>
             <div class="pain-desc">
               赶交期时极易漏写边缘气缸的防撞报警或操作员降级权限，导致现场客诉甚至安全事故。
             </div>
           </div>
-          <div class="card-divider"><span class="arrow-down">↓</span></div>
+          <div class="card-divider"><span class="arrow-down"><i data-lucide="chevron-down" class="lucide-sm"></i></span></div>
           <div class="pain-card-bottom">
             <div class="solution-label">AutoForge 赋能</div>
             <div class="solution-title">穷举式安全生成</div>
@@ -182,14 +184,14 @@
         <!-- Card 3 -->
         <div class="pain-card reveal stagger-3">
           <div class="pain-card-top">
-            <div class="pain-icon">🧑‍💻</div>
+            <div class="pain-icon"><i data-lucide="monitor"></i></div>
             <div class="pain-label">Pain Point #3</div>
             <div class="pain-title">软件人力瓶颈</div>
             <div class="pain-desc">
               资深大牛被困在改点位、调 UI 等低级适配中。新机型排期极其困难，核心研发被搁置。
             </div>
           </div>
-          <div class="card-divider"><span class="arrow-down">↓</span></div>
+          <div class="card-divider"><span class="arrow-down"><i data-lucide="chevron-down" class="lucide-sm"></i></span></div>
           <div class="pain-card-bottom">
             <div class="solution-label">AutoForge 赋能</div>
             <div class="solution-title">释放核心研发算力</div>
@@ -220,43 +222,43 @@
       <div class="compare-table reveal">
         <div class="compare-column compare-bad">
           <div class="compare-header">
-            <div class="compare-icon">❌</div>
+            <div class="compare-icon"><i data-lucide="x-circle"></i></div>
             <h3>纯 AI "直接写"</h3>
             <div class="compare-subtitle">Copilot / ChatGPT / 通用大模型</div>
           </div>
           <ul class="compare-list">
             <li>
-              <div class="compare-item-icon fail">✕</div>
+              <div class="compare-item-icon fail"><i data-lucide="x" class="lucide-xs"></i></div>
               <div>
                 <strong>幻觉问题 (Hallucination)</strong>
                 <span>AI 编造不存在的 API 名称、虚构参数签名，编译直接报错</span>
               </div>
             </li>
             <li>
-              <div class="compare-item-icon fail">✕</div>
+              <div class="compare-item-icon fail"><i data-lucide="x" class="lucide-xs"></i></div>
               <div>
                 <strong>风格不一致</strong>
                 <span>每次生成的命名风格、异常处理、日志格式都可能不同</span>
               </div>
             </li>
             <li>
-              <div class="compare-item-icon fail">✕</div>
+              <div class="compare-item-icon fail"><i data-lucide="x" class="lucide-xs"></i></div>
               <div>
                 <strong>上下文窗口有限</strong>
                 <span>无法同时理解整个项目架构，生成的代码往往不符合既有模式</span>
               </div>
             </li>
             <li>
-              <div class="compare-item-icon fail">✕</div>
+              <div class="compare-item-icon fail"><i data-lucide="x" class="lucide-xs"></i></div>
               <div>
                 <strong>无法调用真实工具链</strong>
                 <span>不能编译验证、不能跑测试、不能分析硬件拓扑</span>
               </div>
             </li>
             <li>
-              <div class="compare-item-icon fail">✕</div>
+              <div class="compare-item-icon fail"><i data-lucide="x" class="lucide-xs"></i></div>
               <div>
-                <strong>不可控 & 不可追溯</strong>
+                <strong>不可控 &amp; 不可追溯</strong>
                 <span>黑盒生成，无法解释为什么这么写，出了问题难以定位</span>
               </div>
             </li>
@@ -269,43 +271,43 @@
 
         <div class="compare-column compare-good">
           <div class="compare-header">
-            <div class="compare-icon">✅</div>
+            <div class="compare-icon"><i data-lucide="check-circle-2"></i></div>
             <h3>AutoForge 工作流</h3>
             <div class="compare-subtitle">结构化 Agent + 确定性模板 + 人工审核</div>
           </div>
           <ul class="compare-list">
             <li>
-              <div class="compare-item-icon pass">✓</div>
+              <div class="compare-item-icon pass"><i data-lucide="check" class="lucide-xs"></i></div>
               <div>
                 <strong>零幻觉：Skill + 模板兜底</strong>
                 <span>API 签名来自解析后的 DLL 元数据，不靠 AI 记忆；确定性模板保证框架调用正确</span>
               </div>
             </li>
             <li>
-              <div class="compare-item-icon pass">✓</div>
+              <div class="compare-item-icon pass"><i data-lucide="check" class="lucide-xs"></i></div>
               <div>
                 <strong>100% 风格统一</strong>
                 <span>所有代码由公司标准模板渲染，AI 只填充业务差异部分，风格天然统一</span>
               </div>
             </li>
             <li>
-              <div class="compare-item-icon pass">✓</div>
+              <div class="compare-item-icon pass"><i data-lucide="check" class="lucide-xs"></i></div>
               <div>
                 <strong>分阶段工作流，逐步深入</strong>
                 <span>每个 Agent 只处理一个明确子任务，完美切分上下文边界</span>
               </div>
             </li>
             <li>
-              <div class="compare-item-icon pass">✓</div>
+              <div class="compare-item-icon pass"><i data-lucide="check" class="lucide-xs"></i></div>
               <div>
                 <strong>闭环验证</strong>
                 <span>每一阶段输出都经过编译验证和沙盒测试，失败自动回滚重试</span>
               </div>
             </li>
             <li>
-              <div class="compare-item-icon pass">✓</div>
+              <div class="compare-item-icon pass"><i data-lucide="check" class="lucide-xs"></i></div>
               <div>
-                <strong>全链路透明 & 可审计</strong>
+                <strong>全链路透明 &amp; 可审计</strong>
                 <span>每一步决策有日志、有上下文、有 diff，满足工业审计要求</span>
               </div>
             </li>
@@ -315,7 +317,7 @@
 
       <!-- Bottom Insight -->
       <div class="compare-insight reveal">
-        <div class="insight-icon">💡</div>
+        <div class="insight-icon"><i data-lucide="lightbulb"></i></div>
         <div class="insight-content">
           <div class="insight-title">核心区别：AutoForge 不是"让 AI 自由发挥"</div>
           <div class="insight-desc">
@@ -348,7 +350,7 @@
       <div class="hitl-flow reveal">
         <!-- Step 1 -->
         <div class="hitl-node hitl-ai">
-          <div class="hitl-node-icon">🤖</div>
+          <div class="hitl-node-icon"><i data-lucide="bot"></i></div>
           <div class="hitl-node-content">
             <div class="hitl-node-role">AI Agent</div>
             <div class="hitl-node-title">草案生成</div>
@@ -366,10 +368,10 @@
 
         <!-- Step 2 -->
         <div class="hitl-node hitl-human">
-          <div class="hitl-node-icon">👨‍🔧</div>
+          <div class="hitl-node-icon"><i data-lucide="user-check"></i></div>
           <div class="hitl-node-content">
             <div class="hitl-node-role">工程师</div>
-            <div class="hitl-node-title">审查 & 修正</div>
+            <div class="hitl-node-title">审查 &amp; 修正</div>
             <div class="hitl-node-desc">Diff 视图逐行审查，标注修改意见，确认或驳回各模块代码段</div>
           </div>
           <div class="hitl-node-badge human-badge">人工审核</div>
@@ -384,7 +386,7 @@
 
         <!-- Step 3 -->
         <div class="hitl-node hitl-ai">
-          <div class="hitl-node-icon">⚙️</div>
+          <div class="hitl-node-icon"><i data-lucide="settings"></i></div>
           <div class="hitl-node-content">
             <div class="hitl-node-role">AI Agent</div>
             <div class="hitl-node-title">迭代修改</div>
@@ -402,7 +404,7 @@
 
         <!-- Step 4 -->
         <div class="hitl-node hitl-human hitl-final">
-          <div class="hitl-node-icon">✅</div>
+          <div class="hitl-node-icon"><i data-lucide="shield-check"></i></div>
           <div class="hitl-node-content">
             <div class="hitl-node-role">工程师</div>
             <div class="hitl-node-title">最终确认</div>
@@ -415,7 +417,7 @@
       <!-- HITL Key Principles -->
       <div class="hitl-principles">
         <div class="hitl-principle reveal stagger-1">
-          <div class="principle-icon">🔒</div>
+          <div class="principle-icon"><i data-lucide="lock"></i></div>
           <div class="principle-title">AI 无权直接提交</div>
           <div class="principle-desc">
             所有 AI 生成的代码都处于沙盒隔离状态。必须经过工程师的显式"Approve"操作，才能合并进工程项目。
@@ -423,15 +425,15 @@
           </div>
         </div>
         <div class="hitl-principle reveal stagger-2">
-          <div class="principle-icon">🔄</div>
+          <div class="principle-icon"><i data-lucide="refresh-cw"></i></div>
           <div class="principle-title">多轮迭代审查</div>
           <div class="principle-desc">
             不满意？直接标注修改意见，AI 会根据反馈重新生成。支持无限次迭代，直到工程师完全满意。
-            <strong>审查成本 < 手写成本的 10%。</strong>
+            <strong>审查成本 &lt; 手写成本的 10%。</strong>
           </div>
         </div>
         <div class="hitl-principle reveal stagger-3">
-          <div class="principle-icon">📋</div>
+          <div class="principle-icon"><i data-lucide="clipboard-list"></i></div>
           <div class="principle-title">全链路可追溯</div>
           <div class="principle-desc">
             每一次 AI 生成、人工审查、修改的时间戳和操作者都被完整记录。
@@ -460,7 +462,7 @@
 
           <div class="mes-features">
             <div class="mes-feature">
-              <div class="mes-feature-icon">📄</div>
+              <div class="mes-feature-icon"><i data-lucide="file-text"></i></div>
               <div>
                 <div class="mes-feature-title">文档即代码 (Doc-to-Code)</div>
                 <div class="mes-feature-desc">
@@ -469,7 +471,7 @@
               </div>
             </div>
             <div class="mes-feature">
-              <div class="mes-feature-icon">🛡️</div>
+              <div class="mes-feature-icon"><i data-lucide="shield"></i></div>
               <div>
                 <div class="mes-feature-title">异步沙盒，绝不卡机 (IT/OT Decoupling)</div>
                 <div class="mes-feature-desc">
@@ -478,7 +480,7 @@
               </div>
             </div>
             <div class="mes-feature">
-              <div class="mes-feature-icon">📦</div>
+              <div class="mes-feature-icon"><i data-lucide="package"></i></div>
               <div>
                 <div class="mes-feature-title">断网本地缓存 (Auto-Resume)</div>
                 <div class="mes-feature-desc">
@@ -521,7 +523,7 @@
       <!-- Architecture Diagram -->
       <div class="tech-arch reveal">
         <div class="tech-layer tech-layer-input">
-          <div class="tech-layer-label">🔽 输入层</div>
+          <div class="tech-layer-label"><i data-lucide="arrow-down-circle" class="lucide-inline"></i> 输入层</div>
           <div class="tech-layer-items">
             <div class="tech-chip">I/O 点位表 (Excel)</div>
             <div class="tech-chip">硬件 BOM 清单</div>
@@ -535,10 +537,10 @@
         </div>
 
         <div class="tech-layer tech-layer-core">
-          <div class="tech-layer-label">⚙️ 核心引擎</div>
+          <div class="tech-layer-label"><i data-lucide="cpu" class="lucide-inline"></i> 核心引擎</div>
           <div class="tech-core-grid">
             <div class="tech-core-card">
-              <div class="tech-core-icon">🔎</div>
+              <div class="tech-core-icon"><i data-lucide="search"></i></div>
               <div class="tech-core-title">Skill 匹配引擎</div>
               <div class="tech-core-desc">
                 通过解析 DLL / NuGet 包的反射元数据，构建 <code>skill.json</code> 描述文件。
@@ -546,7 +548,7 @@
               </div>
             </div>
             <div class="tech-core-card">
-              <div class="tech-core-icon">📐</div>
+              <div class="tech-core-icon"><i data-lucide="layout-template"></i></div>
               <div class="tech-core-title">确定性模板引擎</div>
               <div class="tech-core-desc">
                 MainWindow、Service、ViewModel 等结构由 <code>Scriban</code> 模板渲染。
@@ -554,7 +556,7 @@
               </div>
             </div>
             <div class="tech-core-card">
-              <div class="tech-core-icon">🤖</div>
+              <div class="tech-core-icon"><i data-lucide="bot"></i></div>
               <div class="tech-core-title">多阶段 Agent 编排</div>
               <div class="tech-core-desc">
                 每个 Agent 只处理一个子任务（如 PLC 驱动、视觉流程、I/O 映射）。
@@ -562,7 +564,7 @@
               </div>
             </div>
             <div class="tech-core-card">
-              <div class="tech-core-icon">🧪</div>
+              <div class="tech-core-icon"><i data-lucide="flask-conical"></i></div>
               <div class="tech-core-title">沙盒编译验证</div>
               <div class="tech-core-desc">
                 每一阶段生成的代码都在隔离沙盒中执行 <code>dotnet build</code>。
@@ -577,11 +579,11 @@
         </div>
 
         <div class="tech-layer tech-layer-output">
-          <div class="tech-layer-label">🔼 输出层</div>
+          <div class="tech-layer-label"><i data-lucide="arrow-up-circle" class="lucide-inline"></i> 输出层</div>
           <div class="tech-layer-items">
             <div class="tech-chip chip-green">完整 .sln 项目</div>
             <div class="tech-chip chip-green">编译通过的可执行文件</div>
-            <div class="tech-chip chip-green">变更日志 & Diff</div>
+            <div class="tech-chip chip-green">变更日志 &amp; Diff</div>
             <div class="tech-chip chip-green">合规审计报告</div>
           </div>
         </div>
@@ -647,7 +649,7 @@
         <!-- Step 1 -->
         <div class="step-card" data-step="1">
           <div class="step-number">
-            <span class="step-icon">📂</span>
+            <span class="step-icon"><i data-lucide="folder-open"></i></span>
             <span class="step-idx">1</span>
           </div>
           <div class="step-title">导入资产</div>
@@ -658,7 +660,7 @@
         <!-- Step 2 -->
         <div class="step-card" data-step="2">
           <div class="step-number">
-            <span class="step-icon">🧩</span>
+            <span class="step-icon"><i data-lucide="blocks"></i></span>
             <span class="step-idx">2</span>
           </div>
           <div class="step-title">意图拼装</div>
@@ -669,7 +671,7 @@
         <!-- Step 3 -->
         <div class="step-card" data-step="3">
           <div class="step-number">
-            <span class="step-icon">⚡</span>
+            <span class="step-icon"><i data-lucide="zap"></i></span>
             <span class="step-idx">3</span>
           </div>
           <div class="step-title">生成胶水代码</div>
@@ -680,12 +682,12 @@
         <!-- Step 4 -->
         <div class="step-card" data-step="4">
           <div class="step-number">
-            <span class="step-icon">🚀</span>
+            <span class="step-icon"><i data-lucide="rocket"></i></span>
             <span class="step-idx">4</span>
           </div>
           <div class="step-title">完美编译</div>
           <div class="step-desc">代码无缝合并贵司 .sln 工程，一键编译，直接跑机</div>
-          <div class="step-output">Compile & Run</div>
+          <div class="step-output">Compile &amp; Run</div>
         </div>
       </div>
     </div>
