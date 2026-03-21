@@ -1,0 +1,112 @@
+<!-- ===================================================
+     SECTION — HUMAN IN THE LOOP
+     =================================================== -->
+<section class="hitl-section" id="hitl">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-tag">Human in the Loop</div>
+      <h2 class="section-title">AI 不是替代者，<span class="gradient-text">工程师才是决策者。</span></h2>
+      <p class="section-subtitle">
+        AutoForge 的每一步生成都经过工程师的审查与确认。AI 负责繁重的代码搬运，
+        人类负责关键的工程判断 —— 这就是 Human in the Loop。
+      </p>
+    </div>
+
+    <!-- HITL Flow Visualization -->
+    <div class="hitl-flow reveal">
+      <!-- Step 1 -->
+      <div class="hitl-node hitl-ai">
+        <div class="hitl-node-icon">🤖</div>
+        <div class="hitl-node-content">
+          <div class="hitl-node-role">AI Agent</div>
+          <div class="hitl-node-title">草案生成</div>
+          <div class="hitl-node-desc">根据硬件拓扑与框架规范，AI 自动生成代码草案、报警矩阵、权限树</div>
+        </div>
+        <div class="hitl-node-badge ai-badge">自动</div>
+      </div>
+
+      <div class="hitl-arrow">
+        <svg width="40" height="24" viewBox="0 0 40 24" fill="none">
+          <path d="M2 12 L30 12" stroke="var(--blue)" stroke-width="2" stroke-dasharray="4 3"/>
+          <path d="M28 6 L36 12 L28 18" stroke="var(--blue)" stroke-width="2" fill="none"/>
+        </svg>
+      </div>
+
+      <!-- Step 2 -->
+      <div class="hitl-node hitl-human">
+        <div class="hitl-node-icon">👨‍🔧</div>
+        <div class="hitl-node-content">
+          <div class="hitl-node-role">工程师</div>
+          <div class="hitl-node-title">审查 & 修正</div>
+          <div class="hitl-node-desc">Diff 视图逐行审查，标注修改意见，确认或驳回各模块代码段</div>
+        </div>
+        <div class="hitl-node-badge human-badge">人工审核</div>
+      </div>
+
+      <div class="hitl-arrow">
+        <svg width="40" height="24" viewBox="0 0 40 24" fill="none">
+          <path d="M2 12 L30 12" stroke="var(--green)" stroke-width="2" stroke-dasharray="4 3"/>
+          <path d="M28 6 L36 12 L28 18" stroke="var(--green)" stroke-width="2" fill="none"/>
+        </svg>
+      </div>
+
+      <!-- Step 3 -->
+      <div class="hitl-node hitl-ai">
+        <div class="hitl-node-icon">⚙️</div>
+        <div class="hitl-node-content">
+          <div class="hitl-node-role">AI Agent</div>
+          <div class="hitl-node-title">迭代修改</div>
+          <div class="hitl-node-desc">根据工程师反馈自动修订；每一轮修改都记录 changelog，可追溯</div>
+        </div>
+        <div class="hitl-node-badge ai-badge">自动</div>
+      </div>
+
+      <div class="hitl-arrow">
+        <svg width="40" height="24" viewBox="0 0 40 24" fill="none">
+          <path d="M2 12 L30 12" stroke="var(--green)" stroke-width="2" stroke-dasharray="4 3"/>
+          <path d="M28 6 L36 12 L28 18" stroke="var(--green)" stroke-width="2" fill="none"/>
+        </svg>
+      </div>
+
+      <!-- Step 4 -->
+      <div class="hitl-node hitl-human hitl-final">
+        <div class="hitl-node-icon">✅</div>
+        <div class="hitl-node-content">
+          <div class="hitl-node-role">工程师</div>
+          <div class="hitl-node-title">最终确认</div>
+          <div class="hitl-node-desc">签核通过后一键合并到项目；未签核的代码绝不进入生产环境</div>
+        </div>
+        <div class="hitl-node-badge human-badge">签核</div>
+      </div>
+    </div>
+
+    <!-- HITL Key Principles -->
+    <div class="hitl-principles">
+      <div class="hitl-principle reveal stagger-1">
+        <div class="principle-icon">🔒</div>
+        <div class="principle-title">AI 无权直接提交</div>
+        <div class="principle-desc">
+          所有 AI 生成的代码都处于沙盒隔离状态。必须经过工程师的显式"Approve"操作，才能合并进工程项目。
+          <strong>没有人类签核，代码不出沙盒。</strong>
+        </div>
+      </div>
+      <div class="hitl-principle reveal stagger-2">
+        <div class="principle-icon">🔄</div>
+        <div class="principle-title">多轮迭代审查</div>
+        <div class="principle-desc">
+          不满意？直接标注修改意见，AI 会根据反馈重新生成。支持无限次迭代，直到工程师完全满意。
+          <strong>审查成本 < 手写成本的 10%。</strong>
+        </div>
+      </div>
+      <div class="hitl-principle reveal stagger-3">
+        <div class="principle-icon">📋</div>
+        <div class="principle-title">全链路可追溯</div>
+        <div class="principle-desc">
+          每一次 AI 生成、人工审查、修改的时间戳和操作者都被完整记录。
+          <strong>满足 ISO 13485 / IEC 62304 等合规要求。</strong>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>

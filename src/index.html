@@ -7,6 +7,9 @@
   <title>AutoForge — 现有框架的超级增效引擎 | 告别人工适配</title>
   <meta name="description" content="AutoForge 无缝接入您的模块化设备库，将 3-5 天的非标胶水代码、权限配置与 MES 联调时间，压缩至 10 分钟。无需推翻现有架构。" />
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="css/hitl.css" />
+  <link rel="stylesheet" href="css/compare.css" />
+  <link rel="stylesheet" href="css/tech.css" />
 </head>
 
 <body>
@@ -19,7 +22,9 @@
     </a>
     <ul class="nav-menu">
       <li><a href="#pain">价值场景</a></li>
-      <li><a href="#mes">MES 方案</a></li>
+      <li><a href="#compare">AI 对比</a></li>
+      <li><a href="#hitl">HITL 机制</a></li>
+      <li><a href="#tech">技术原理</a></li>
       <li><a href="#workflow">工作流</a></li>
       <li><a href="#cta" class="nav-cta-btn">预约演示</a></li>
     </ul>
@@ -198,7 +203,248 @@
   </section>
 
   <!-- ===================================================
-       SECTION 3 — MES NIGHTMARE KILLER
+       SECTION 3 — WHY PURE AI FAILS vs. WORKFLOW
+       =================================================== -->
+  <section class="compare-section" id="compare">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-tag">Why Workflow Wins</div>
+        <h2 class="section-title">为什么"让 AI 直接写"行不通？</h2>
+        <p class="section-subtitle">
+          纯 AI 生成代码看似美好，实则暗藏致命陷阱。AutoForge 采用工作流驱动的方式，
+          从根本上解决了这些问题。
+        </p>
+      </div>
+
+      <!-- Comparison Table -->
+      <div class="compare-table reveal">
+        <div class="compare-column compare-bad">
+          <div class="compare-header">
+            <div class="compare-icon">❌</div>
+            <h3>纯 AI "直接写"</h3>
+            <div class="compare-subtitle">Copilot / ChatGPT / 通用大模型</div>
+          </div>
+          <ul class="compare-list">
+            <li>
+              <div class="compare-item-icon fail">✕</div>
+              <div>
+                <strong>幻觉问题 (Hallucination)</strong>
+                <span>AI 编造不存在的 API 名称、虚构参数签名，编译直接报错</span>
+              </div>
+            </li>
+            <li>
+              <div class="compare-item-icon fail">✕</div>
+              <div>
+                <strong>风格不一致</strong>
+                <span>每次生成的命名风格、异常处理、日志格式都可能不同</span>
+              </div>
+            </li>
+            <li>
+              <div class="compare-item-icon fail">✕</div>
+              <div>
+                <strong>上下文窗口有限</strong>
+                <span>无法同时理解整个项目架构，生成的代码往往不符合既有模式</span>
+              </div>
+            </li>
+            <li>
+              <div class="compare-item-icon fail">✕</div>
+              <div>
+                <strong>无法调用真实工具链</strong>
+                <span>不能编译验证、不能跑测试、不能分析硬件拓扑</span>
+              </div>
+            </li>
+            <li>
+              <div class="compare-item-icon fail">✕</div>
+              <div>
+                <strong>不可控 & 不可追溯</strong>
+                <span>黑盒生成，无法解释为什么这么写，出了问题难以定位</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="compare-vs">
+          <span>VS</span>
+        </div>
+
+        <div class="compare-column compare-good">
+          <div class="compare-header">
+            <div class="compare-icon">✅</div>
+            <h3>AutoForge 工作流</h3>
+            <div class="compare-subtitle">结构化 Agent + 确定性模板 + 人工审核</div>
+          </div>
+          <ul class="compare-list">
+            <li>
+              <div class="compare-item-icon pass">✓</div>
+              <div>
+                <strong>零幻觉：Skill + 模板兜底</strong>
+                <span>API 签名来自解析后的 DLL 元数据，不靠 AI 记忆；确定性模板保证框架调用正确</span>
+              </div>
+            </li>
+            <li>
+              <div class="compare-item-icon pass">✓</div>
+              <div>
+                <strong>100% 风格统一</strong>
+                <span>所有代码由公司标准模板渲染，AI 只填充业务差异部分，风格天然统一</span>
+              </div>
+            </li>
+            <li>
+              <div class="compare-item-icon pass">✓</div>
+              <div>
+                <strong>分阶段工作流，逐步深入</strong>
+                <span>每个 Agent 只处理一个明确子任务，完美切分上下文边界</span>
+              </div>
+            </li>
+            <li>
+              <div class="compare-item-icon pass">✓</div>
+              <div>
+                <strong>闭环验证</strong>
+                <span>每一阶段输出都经过编译验证和沙盒测试，失败自动回滚重试</span>
+              </div>
+            </li>
+            <li>
+              <div class="compare-item-icon pass">✓</div>
+              <div>
+                <strong>全链路透明 & 可审计</strong>
+                <span>每一步决策有日志、有上下文、有 diff，满足工业审计要求</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Bottom Insight -->
+      <div class="compare-insight reveal">
+        <div class="insight-icon">💡</div>
+        <div class="insight-content">
+          <div class="insight-title">核心区别：AutoForge 不是"让 AI 自由发挥"</div>
+          <div class="insight-desc">
+            我们把 AI 置于一条<strong>严格受控的工业流水线</strong>上。每个 Agent 的输入、输出、
+            约束条件都是确定的。AI 只在被允许的空间内发挥创造力，其余部分全部由
+            <strong>确定性模板和编译器</strong>保证正确性。这就像让 AI 在"护栏"里跑，
+            而不是在旷野上自由奔跑。
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===================================================
+       SECTION 4 — HUMAN IN THE LOOP
+       =================================================== -->
+  <section class="hitl-section" id="hitl">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-tag">Human in the Loop</div>
+        <h2 class="section-title">AI 不是替代者，<span class="gradient-text">工程师才是决策者。</span></h2>
+        <p class="section-subtitle">
+          AutoForge 的每一步生成都经过工程师的审查与确认。AI 负责繁重的代码搬运，
+          人类负责关键的工程判断 —— 这就是 Human in the Loop。
+        </p>
+      </div>
+
+      <!-- HITL Flow Visualization -->
+      <div class="hitl-flow reveal">
+        <!-- Step 1 -->
+        <div class="hitl-node hitl-ai">
+          <div class="hitl-node-icon">🤖</div>
+          <div class="hitl-node-content">
+            <div class="hitl-node-role">AI Agent</div>
+            <div class="hitl-node-title">草案生成</div>
+            <div class="hitl-node-desc">根据硬件拓扑与框架规范，AI 自动生成代码草案、报警矩阵、权限树</div>
+          </div>
+          <div class="hitl-node-badge ai-badge">自动</div>
+        </div>
+
+        <div class="hitl-arrow">
+          <svg width="40" height="24" viewBox="0 0 40 24" fill="none">
+            <path d="M2 12 L30 12" stroke="var(--blue)" stroke-width="2" stroke-dasharray="4 3"/>
+            <path d="M28 6 L36 12 L28 18" stroke="var(--blue)" stroke-width="2" fill="none"/>
+          </svg>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="hitl-node hitl-human">
+          <div class="hitl-node-icon">👨‍🔧</div>
+          <div class="hitl-node-content">
+            <div class="hitl-node-role">工程师</div>
+            <div class="hitl-node-title">审查 & 修正</div>
+            <div class="hitl-node-desc">Diff 视图逐行审查，标注修改意见，确认或驳回各模块代码段</div>
+          </div>
+          <div class="hitl-node-badge human-badge">人工审核</div>
+        </div>
+
+        <div class="hitl-arrow">
+          <svg width="40" height="24" viewBox="0 0 40 24" fill="none">
+            <path d="M2 12 L30 12" stroke="var(--green)" stroke-width="2" stroke-dasharray="4 3"/>
+            <path d="M28 6 L36 12 L28 18" stroke="var(--green)" stroke-width="2" fill="none"/>
+          </svg>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="hitl-node hitl-ai">
+          <div class="hitl-node-icon">⚙️</div>
+          <div class="hitl-node-content">
+            <div class="hitl-node-role">AI Agent</div>
+            <div class="hitl-node-title">迭代修改</div>
+            <div class="hitl-node-desc">根据工程师反馈自动修订；每一轮修改都记录 changelog，可追溯</div>
+          </div>
+          <div class="hitl-node-badge ai-badge">自动</div>
+        </div>
+
+        <div class="hitl-arrow">
+          <svg width="40" height="24" viewBox="0 0 40 24" fill="none">
+            <path d="M2 12 L30 12" stroke="var(--green)" stroke-width="2" stroke-dasharray="4 3"/>
+            <path d="M28 6 L36 12 L28 18" stroke="var(--green)" stroke-width="2" fill="none"/>
+          </svg>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="hitl-node hitl-human hitl-final">
+          <div class="hitl-node-icon">✅</div>
+          <div class="hitl-node-content">
+            <div class="hitl-node-role">工程师</div>
+            <div class="hitl-node-title">最终确认</div>
+            <div class="hitl-node-desc">签核通过后一键合并到项目；未签核的代码绝不进入生产环境</div>
+          </div>
+          <div class="hitl-node-badge human-badge">签核</div>
+        </div>
+      </div>
+
+      <!-- HITL Key Principles -->
+      <div class="hitl-principles">
+        <div class="hitl-principle reveal stagger-1">
+          <div class="principle-icon">🔒</div>
+          <div class="principle-title">AI 无权直接提交</div>
+          <div class="principle-desc">
+            所有 AI 生成的代码都处于沙盒隔离状态。必须经过工程师的显式"Approve"操作，才能合并进工程项目。
+            <strong>没有人类签核，代码不出沙盒。</strong>
+          </div>
+        </div>
+        <div class="hitl-principle reveal stagger-2">
+          <div class="principle-icon">🔄</div>
+          <div class="principle-title">多轮迭代审查</div>
+          <div class="principle-desc">
+            不满意？直接标注修改意见，AI 会根据反馈重新生成。支持无限次迭代，直到工程师完全满意。
+            <strong>审查成本 < 手写成本的 10%。</strong>
+          </div>
+        </div>
+        <div class="hitl-principle reveal stagger-3">
+          <div class="principle-icon">📋</div>
+          <div class="principle-title">全链路可追溯</div>
+          <div class="principle-desc">
+            每一次 AI 生成、人工审查、修改的时间戳和操作者都被完整记录。
+            <strong>满足 ISO 13485 / IEC 62304 等合规要求。</strong>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===================================================
+       SECTION 5 — MES NIGHTMARE KILLER
        =================================================== -->
   <section class="mes-section" id="mes">
     <div class="container">
@@ -260,7 +506,128 @@
   </section>
 
   <!-- ===================================================
-       SECTION 4 — WORKFLOW (4 Steps)
+       SECTION 6 — TECH ARCHITECTURE
+       =================================================== -->
+  <section class="tech-section" id="tech">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-tag">Under the Hood</div>
+        <h2 class="section-title">技术原理一览</h2>
+        <p class="section-subtitle">
+          AutoForge 的核心并非"一个大模型"，而是一套协作式 Agent 工作流 + 确定性代码渲染引擎。
+        </p>
+      </div>
+
+      <!-- Architecture Diagram -->
+      <div class="tech-arch reveal">
+        <div class="tech-layer tech-layer-input">
+          <div class="tech-layer-label">🔽 输入层</div>
+          <div class="tech-layer-items">
+            <div class="tech-chip">I/O 点位表 (Excel)</div>
+            <div class="tech-chip">硬件 BOM 清单</div>
+            <div class="tech-chip">MES API 文档</div>
+            <div class="tech-chip">自然语言描述</div>
+          </div>
+        </div>
+
+        <div class="tech-flow-arrow">
+          <div class="tech-flow-line"></div>
+        </div>
+
+        <div class="tech-layer tech-layer-core">
+          <div class="tech-layer-label">⚙️ 核心引擎</div>
+          <div class="tech-core-grid">
+            <div class="tech-core-card">
+              <div class="tech-core-icon">🔎</div>
+              <div class="tech-core-title">Skill 匹配引擎</div>
+              <div class="tech-core-desc">
+                通过解析 DLL / NuGet 包的反射元数据，构建 <code>skill.json</code> 描述文件。
+                Agent 按硬件类型查表匹配可用 Skill，消除 AI "幻觉" API 调用。
+              </div>
+            </div>
+            <div class="tech-core-card">
+              <div class="tech-core-icon">📐</div>
+              <div class="tech-core-title">确定性模板引擎</div>
+              <div class="tech-core-desc">
+                MainWindow、Service、ViewModel 等结构由 <code>Scriban</code> 模板渲染。
+                框架调用代码 100% 确定生成，杜绝 AI 篡改框架层级接口。
+              </div>
+            </div>
+            <div class="tech-core-card">
+              <div class="tech-core-icon">🤖</div>
+              <div class="tech-core-title">多阶段 Agent 编排</div>
+              <div class="tech-core-desc">
+                每个 Agent 只处理一个子任务（如 PLC 驱动、视觉流程、I/O 映射）。
+                编排器按依赖关系调度，前一阶段的输出是后一阶段的输入。
+              </div>
+            </div>
+            <div class="tech-core-card">
+              <div class="tech-core-icon">🧪</div>
+              <div class="tech-core-title">沙盒编译验证</div>
+              <div class="tech-core-desc">
+                每一阶段生成的代码都在隔离沙盒中执行 <code>dotnet build</code>。
+                编译失败自动携带错误上下文回传 Agent 进行修复，最多 N 轮重试。
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="tech-flow-arrow">
+          <div class="tech-flow-line"></div>
+        </div>
+
+        <div class="tech-layer tech-layer-output">
+          <div class="tech-layer-label">🔼 输出层</div>
+          <div class="tech-layer-items">
+            <div class="tech-chip chip-green">完整 .sln 项目</div>
+            <div class="tech-chip chip-green">编译通过的可执行文件</div>
+            <div class="tech-chip chip-green">变更日志 & Diff</div>
+            <div class="tech-chip chip-green">合规审计报告</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Key Tech Points -->
+      <div class="tech-highlights">
+        <div class="tech-highlight reveal stagger-1">
+          <div class="tech-hl-num">01</div>
+          <div class="tech-hl-content">
+            <div class="tech-hl-title">反射式 Skill 发现</div>
+            <div class="tech-hl-desc">
+              通过 .NET Reflection 提取 DLL 中的类名、方法签名、参数类型，自动构建结构化的 Skill 描述文件。
+              LLM 在生成代码时严格引用这些真实签名，而非从训练数据中"回忆"。
+            </div>
+          </div>
+        </div>
+        <div class="tech-highlight reveal stagger-2">
+          <div class="tech-hl-num">02</div>
+          <div class="tech-hl-content">
+            <div class="tech-hl-title">模板 + AI 混合渲染</div>
+            <div class="tech-hl-desc">
+              结构性代码（MVVM 骨架、DI 注册、界面布局）由 Scriban 模板确定性生成。
+              仅业务逻辑层（工艺流程、异常处理策略）交由 LLM 在约束条件下填充。
+              两者的边界由清晰的接口契约定义。
+            </div>
+          </div>
+        </div>
+        <div class="tech-highlight reveal stagger-3">
+          <div class="tech-hl-num">03</div>
+          <div class="tech-hl-content">
+            <div class="tech-hl-title">编译驱动的自修复循环</div>
+            <div class="tech-hl-desc">
+              每一步输出不是"看起来正确的代码"，而是"通过 dotnet build 验证的代码"。
+              编译器错误信息会自动回传到 Agent 的上下文中，驱动 AI 自主修复，
+              直到 0 Error 达成或超过重试阈值。
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===================================================
+       SECTION 7 — WORKFLOW (4 Steps)
        =================================================== -->
   <section class="workflow-section" id="workflow">
     <div class="container">
@@ -325,7 +692,7 @@
   </section>
 
   <!-- ===================================================
-       SECTION 5 — BOSS QUOTE + ROI + CTA
+       SECTION 8 — BOSS QUOTE + ROI + CTA
        =================================================== -->
   <section class="cta-section" id="cta">
     <div class="cta-glow-bg"></div>

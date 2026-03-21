@@ -1,0 +1,127 @@
+<!-- ===================================================
+     SECTION — WHY PURE AI FAILS vs. WORKFLOW APPROACH
+     =================================================== -->
+<section class="compare-section" id="compare">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-tag">Why Workflow Wins</div>
+      <h2 class="section-title">为什么"让 AI 直接写"行不通？</h2>
+      <p class="section-subtitle">
+        纯 AI 生成代码看似美好，实则暗藏致命陷阱。AutoForge 采用工作流驱动的方式，
+        从根本上解决了这些问题。
+      </p>
+    </div>
+
+    <!-- Comparison Table -->
+    <div class="compare-table reveal">
+      <div class="compare-column compare-bad">
+        <div class="compare-header">
+          <div class="compare-icon">❌</div>
+          <h3>纯 AI "直接写"</h3>
+          <div class="compare-subtitle">Copilot / ChatGPT / 通用大模型</div>
+        </div>
+        <ul class="compare-list">
+          <li>
+            <div class="compare-item-icon fail">✕</div>
+            <div>
+              <strong>幻觉问题 (Hallucination)</strong>
+              <span>AI 编造不存在的 API 名称、虚构参数签名，编译直接报错</span>
+            </div>
+          </li>
+          <li>
+            <div class="compare-item-icon fail">✕</div>
+            <div>
+              <strong>风格不一致</strong>
+              <span>每次生成的命名风格、异常处理、日志格式都可能不同</span>
+            </div>
+          </li>
+          <li>
+            <div class="compare-item-icon fail">✕</div>
+            <div>
+              <strong>上下文窗口有限</strong>
+              <span>无法同时理解整个项目架构，生成的代码往往不符合既有模式</span>
+            </div>
+          </li>
+          <li>
+            <div class="compare-item-icon fail">✕</div>
+            <div>
+              <strong>无法调用真实工具链</strong>
+              <span>不能编译验证、不能跑测试、不能分析硬件拓扑</span>
+            </div>
+          </li>
+          <li>
+            <div class="compare-item-icon fail">✕</div>
+            <div>
+              <strong>不可控 & 不可追溯</strong>
+              <span>黑盒生成，无法解释为什么这么写，出了问题难以定位</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="compare-vs">
+        <span>VS</span>
+      </div>
+
+      <div class="compare-column compare-good">
+        <div class="compare-header">
+          <div class="compare-icon">✅</div>
+          <h3>AutoForge 工作流</h3>
+          <div class="compare-subtitle">结构化 Agent + 确定性模板 + 人工审核</div>
+        </div>
+        <ul class="compare-list">
+          <li>
+            <div class="compare-item-icon pass">✓</div>
+            <div>
+              <strong>零幻觉：Skill + 模板兜底</strong>
+              <span>API 签名来自解析后的 DLL 元数据，不靠 AI 记忆；确定性模板保证框架调用正确</span>
+            </div>
+          </li>
+          <li>
+            <div class="compare-item-icon pass">✓</div>
+            <div>
+              <strong>100% 风格统一</strong>
+              <span>所有代码由公司标准模板渲染，AI 只填充业务差异部分，风格天然统一</span>
+            </div>
+          </li>
+          <li>
+            <div class="compare-item-icon pass">✓</div>
+            <div>
+              <strong>分阶段工作流，逐步深入</strong>
+              <span>每个 Agent 只处理一个明确子任务，完美切分上下文边界</span>
+            </div>
+          </li>
+          <li>
+            <div class="compare-item-icon pass">✓</div>
+            <div>
+              <strong>闭环验证</strong>
+              <span>每一阶段输出都经过编译验证和沙盒测试，失败自动回滚重试</span>
+            </div>
+          </li>
+          <li>
+            <div class="compare-item-icon pass">✓</div>
+            <div>
+              <strong>全链路透明 & 可审计</strong>
+              <span>每一步决策有日志、有上下文、有 diff，满足工业审计要求</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Bottom Insight -->
+    <div class="compare-insight reveal">
+      <div class="insight-icon">💡</div>
+      <div class="insight-content">
+        <div class="insight-title">核心区别：AutoForge 不是"让 AI 自由发挥"</div>
+        <div class="insight-desc">
+          我们把 AI 置于一条<strong>严格受控的工业流水线</strong>上。每个 Agent 的输入、输出、
+          约束条件都是确定的。AI 只在被允许的空间内发挥创造力，其余部分全部由
+          <strong>确定性模板和编译器</strong>保证正确性。这就像让 AI 在"护栏"里跑，
+          而不是在旷野上自由奔跑。
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>

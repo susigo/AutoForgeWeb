@@ -1,0 +1,223 @@
+/* ============================================
+   SECTION — TECH ARCHITECTURE
+   ============================================ */
+.tech-section {
+  padding: var(--section-gap) 0;
+  background: linear-gradient(180deg, var(--bg-deep) 0%, var(--bg-secondary) 50%, var(--bg-deep) 100%);
+  position: relative;
+}
+
+/* Architecture Diagram */
+.tech-arch {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  margin-bottom: 80px;
+}
+
+.tech-layer {
+  width: 100%;
+  max-width: 900px;
+  padding: 28px 32px;
+  border-radius: var(--radius-md);
+  position: relative;
+}
+
+.tech-layer-label {
+  font-size: 0.8rem;
+  font-weight: 700;
+  font-family: var(--font-mono);
+  margin-bottom: 16px;
+  letter-spacing: 0.5px;
+}
+
+.tech-layer-input {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+}
+.tech-layer-input .tech-layer-label {
+  color: var(--blue-light);
+}
+
+.tech-layer-output {
+  background: var(--bg-card);
+  border: 1px solid rgba(16, 185, 129, 0.15);
+}
+.tech-layer-output .tech-layer-label {
+  color: var(--green-light);
+}
+
+.tech-layer-items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.tech-chip {
+  padding: 8px 18px;
+  background: var(--blue-subtle);
+  border: 1px solid var(--border-blue);
+  border-radius: 100px;
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--blue-light);
+  transition: var(--transition-fast);
+}
+.tech-chip:hover {
+  background: rgba(59, 130, 246, 0.15);
+  transform: translateY(-2px);
+}
+
+.tech-chip.chip-green {
+  background: var(--green-subtle);
+  border-color: rgba(16, 185, 129, 0.2);
+  color: var(--green-light);
+}
+.tech-chip.chip-green:hover {
+  background: rgba(16, 185, 129, 0.15);
+}
+
+/* Flow Arrow */
+.tech-flow-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 48px;
+  position: relative;
+}
+
+.tech-flow-line {
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(180deg, var(--blue), var(--green));
+  position: relative;
+}
+.tech-flow-line::after {
+  content: '';
+  position: absolute;
+  bottom: -6px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 8px solid var(--green);
+}
+
+/* Core Engine Grid */
+.tech-layer-core {
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.04), rgba(16, 185, 129, 0.04));
+  border: 1px solid var(--border-blue);
+  box-shadow: 0 0 60px rgba(59, 130, 246, 0.05);
+}
+.tech-layer-core .tech-layer-label {
+  color: var(--text-primary);
+  font-size: 0.88rem;
+}
+
+.tech-core-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.tech-core-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 24px 22px;
+  transition: var(--transition-md);
+}
+.tech-core-card:hover {
+  border-color: var(--border-light);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 36px rgba(0,0,0,0.25);
+}
+
+.tech-core-icon {
+  font-size: 1.5rem;
+  margin-bottom: 12px;
+}
+
+.tech-core-title {
+  font-size: 0.92rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: var(--text-primary);
+}
+
+.tech-core-desc {
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+  line-height: 1.65;
+}
+.tech-core-desc code {
+  background: var(--blue-subtle);
+  color: var(--blue-light);
+  padding: 2px 7px;
+  border-radius: 4px;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+}
+
+/* Key Tech Highlights */
+.tech-highlights {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.tech-highlight {
+  display: flex;
+  gap: 28px;
+  align-items: flex-start;
+  padding: 36px 0;
+  border-bottom: 1px solid var(--border);
+}
+.tech-highlight:last-child {
+  border-bottom: none;
+}
+
+.tech-hl-num {
+  font-size: 2.8rem;
+  font-weight: 900;
+  color: var(--text-dim);
+  font-family: var(--font-mono);
+  line-height: 1;
+  flex-shrink: 0;
+  min-width: 60px;
+}
+
+.tech-hl-title {
+  font-size: 1.08rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: var(--text-primary);
+}
+
+.tech-hl-desc {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  line-height: 1.75;
+}
+
+/* Responsive */
+@media (max-width: 1080px) {
+  .tech-core-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .tech-highlight {
+    flex-direction: column;
+    gap: 12px;
+  }
+  .tech-hl-num {
+    font-size: 2rem;
+  }
+}

@@ -1,0 +1,120 @@
+<!-- ===================================================
+     SECTION — TECH ARCHITECTURE (简述技术原理)
+     =================================================== -->
+<section class="tech-section" id="tech">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-tag">Under the Hood</div>
+      <h2 class="section-title">技术原理一览</h2>
+      <p class="section-subtitle">
+        AutoForge 的核心并非"一个大模型"，而是一套协作式 Agent 工作流 + 确定性代码渲染引擎。
+      </p>
+    </div>
+
+    <!-- Architecture Diagram -->
+    <div class="tech-arch reveal">
+      <div class="tech-layer tech-layer-input">
+        <div class="tech-layer-label">🔽 输入层</div>
+        <div class="tech-layer-items">
+          <div class="tech-chip">I/O 点位表 (Excel)</div>
+          <div class="tech-chip">硬件 BOM 清单</div>
+          <div class="tech-chip">MES API 文档</div>
+          <div class="tech-chip">自然语言描述</div>
+        </div>
+      </div>
+
+      <div class="tech-flow-arrow">
+        <div class="tech-flow-line"></div>
+      </div>
+
+      <div class="tech-layer tech-layer-core">
+        <div class="tech-layer-label">⚙️ 核心引擎</div>
+        <div class="tech-core-grid">
+          <div class="tech-core-card">
+            <div class="tech-core-icon">🔎</div>
+            <div class="tech-core-title">Skill 匹配引擎</div>
+            <div class="tech-core-desc">
+              通过解析 DLL / NuGet 包的反射元数据，构建 <code>skill.json</code> 描述文件。
+              Agent 按硬件类型查表匹配可用 Skill，消除 AI "幻觉" API 调用。
+            </div>
+          </div>
+          <div class="tech-core-card">
+            <div class="tech-core-icon">📐</div>
+            <div class="tech-core-title">确定性模板引擎</div>
+            <div class="tech-core-desc">
+              MainWindow、Service、ViewModel 等结构由 <code>Scriban</code> 模板渲染。
+              框架调用代码 100% 确定生成，杜绝 AI 篡改框架层级接口。
+            </div>
+          </div>
+          <div class="tech-core-card">
+            <div class="tech-core-icon">🤖</div>
+            <div class="tech-core-title">多阶段 Agent 编排</div>
+            <div class="tech-core-desc">
+              每个 Agent 只处理一个子任务（如 PLC 驱动、视觉流程、I/O 映射）。
+              编排器按依赖关系调度，前一阶段的输出是后一阶段的输入。
+            </div>
+          </div>
+          <div class="tech-core-card">
+            <div class="tech-core-icon">🧪</div>
+            <div class="tech-core-title">沙盒编译验证</div>
+            <div class="tech-core-desc">
+              每一阶段生成的代码都在隔离沙盒中执行 <code>dotnet build</code>。
+              编译失败自动携带错误上下文回传 Agent 进行修复，最多 N 轮重试。
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tech-flow-arrow">
+        <div class="tech-flow-line"></div>
+      </div>
+
+      <div class="tech-layer tech-layer-output">
+        <div class="tech-layer-label">🔼 输出层</div>
+        <div class="tech-layer-items">
+          <div class="tech-chip chip-green">完整 .sln 项目</div>
+          <div class="tech-chip chip-green">编译通过的可执行文件</div>
+          <div class="tech-chip chip-green">变更日志 & Diff</div>
+          <div class="tech-chip chip-green">合规审计报告</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Key Tech Points -->
+    <div class="tech-highlights">
+      <div class="tech-highlight reveal stagger-1">
+        <div class="tech-hl-num">01</div>
+        <div class="tech-hl-content">
+          <div class="tech-hl-title">反射式 Skill 发现</div>
+          <div class="tech-hl-desc">
+            通过 .NET Reflection 提取 DLL 中的类名、方法签名、参数类型，自动构建结构化的 Skill 描述文件。
+            LLM 在生成代码时严格引用这些真实签名，而非从训练数据中"回忆"。
+          </div>
+        </div>
+      </div>
+      <div class="tech-highlight reveal stagger-2">
+        <div class="tech-hl-num">02</div>
+        <div class="tech-hl-content">
+          <div class="tech-hl-title">模板 + AI 混合渲染</div>
+          <div class="tech-hl-desc">
+            结构性代码（MVVM 骨架、DI 注册、界面布局）由 Scriban 模板确定性生成。
+            仅业务逻辑层（工艺流程、异常处理策略）交由 LLM 在约束条件下填充。
+            两者的边界由清晰的接口契约定义。
+          </div>
+        </div>
+      </div>
+      <div class="tech-highlight reveal stagger-3">
+        <div class="tech-hl-num">03</div>
+        <div class="tech-hl-content">
+          <div class="tech-hl-title">编译驱动的自修复循环</div>
+          <div class="tech-hl-desc">
+            每一步输出不是"看起来正确的代码"，而是"通过 dotnet build 验证的代码"。
+            编译器错误信息会自动回传到 Agent 的上下文中，驱动 AI 自主修复，
+            直到 0 Error 达成或超过重试阈值。
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
