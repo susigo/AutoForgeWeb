@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cp \"E:/pratice/AITest/AutoForgeWeb/src/style.css\" \"E:/pratice/AITest/autoforgeweb-v3/personal/style.css\")",
+      "Bash(cp \"E:/pratice/AITest/AutoForgeWeb/src/main.js\" \"E:/pratice/AITest/autoforgeweb-v3/personal/main.js\")"
+    ]
+  }
+}

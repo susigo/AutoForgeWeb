@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AutoForge — 全球首个微秒级物理防撞沙盒工业 AI IDE</title>
+  <meta name="description" content="AutoForge：全球首个带有微秒级物理防撞沙盒的工业 AI IDE。仅需表格与文档，一杯咖啡的时间，自动生成百万级非标产线的大脑与应用层源码。" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ======== NAVBAR ======== -->
+  <nav class="navbar" id="navbar">
+    <a href="#" class="navbar-logo">
+      <div class="logo-icon">
+        <svg viewBox="0 0 64 64" width="32" height="32" xmlns="http://www.w3.org/2000/svg">
+          <!-- Outer hexagon -->
+          <polygon points="32,2 58,17 58,47 32,62 6,47 6,17" fill="none" stroke="url(#logoGrad)" stroke-width="2.5" class="hex-outer"/>
+          <!-- Inner hexagon -->
+          <polygon points="32,12 48,21 48,39 32,48 16,39 16,21" fill="rgba(0,112,243,0.08)" stroke="url(#logoGrad)" stroke-width="1.2" class="hex-inner"/>
+          <!-- Anvil / Forge symbol -->
+          <path d="M22,36 L22,28 L26,24 L38,24 L42,28 L42,36 Z" fill="none" stroke="url(#logoGrad)" stroke-width="1.8" stroke-linejoin="round"/>
+          <line x1="22" y1="36" x2="42" y2="36" stroke="url(#logoGrad)" stroke-width="2.2"/>
+          <line x1="26" y1="40" x2="38" y2="40" stroke="url(#logoGrad)" stroke-width="1.5"/>
+          <!-- Circuit lines -->
+          <line x1="32" y1="2" x2="32" y2="12" stroke="url(#logoGrad)" stroke-width="1" opacity="0.5"/>
+          <line x1="58" y1="17" x2="48" y2="21" stroke="url(#logoGrad)" stroke-width="1" opacity="0.5"/>
+          <line x1="6" y1="17" x2="16" y2="21" stroke="url(#logoGrad)" stroke-width="1" opacity="0.5"/>
+          <line x1="58" y1="47" x2="48" y2="39" stroke="url(#logoGrad)" stroke-width="1" opacity="0.5"/>
+          <line x1="6" y1="47" x2="16" y2="39" stroke="url(#logoGrad)" stroke-width="1" opacity="0.5"/>
+          <line x1="32" y1="62" x2="32" y2="48" stroke="url(#logoGrad)" stroke-width="1" opacity="0.5"/>
+          <!-- Circuit dots -->
+          <circle cx="32" cy="2" r="2" fill="#38a1ff" class="circuit-dot"/>
+          <circle cx="58" cy="17" r="2" fill="#38a1ff" class="circuit-dot"/>
+          <circle cx="6" cy="17" r="2" fill="#38a1ff" class="circuit-dot"/>
+          <circle cx="58" cy="47" r="2" fill="#38a1ff" class="circuit-dot"/>
+          <circle cx="6" cy="47" r="2" fill="#38a1ff" class="circuit-dot"/>
+          <circle cx="32" cy="62" r="2" fill="#38a1ff" class="circuit-dot"/>
+          <!-- Spark particle -->
+          <circle cx="32" cy="30" r="1.5" fill="#fff" class="spark-core">
+            <animate attributeName="opacity" values="1;0.3;1" dur="2s" repeatCount="indefinite"/>
+          </circle>
+          <defs>
+            <linearGradient id="logoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#0070F3"/>
+              <stop offset="100%" stop-color="#00d4ff"/>
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
+      AutoForge
+    </a>
+    <div class="navbar-links">
+      <a href="../index.html" style="color:#4f8cff;font-weight:600;">← 返回选择页</a>
+      <a href="#magic">文档 Docs</a>
+      <a href="#ecosystem">技能商店 Skills</a>
+      <a href="#pricing">定价 Pricing</a>
+      <button class="btn-nav-cta" onclick="document.getElementById('footer-cta').scrollIntoView({behavior:'smooth'})">免费下载 Studio</button>
+    </div>
+  </nav>
+
+  <!-- ======== SECTION 1: HERO ======== -->
+  <section class="hero" id="hero">
+    <!-- Particle network background -->
+    <canvas id="hero-particles"></canvas>
+    <!-- Animated scanline overlay -->
+    <div class="hero-scanline"></div>
+    <!-- Central radial halo -->
+    <div class="hero-halo"></div>
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span></span>
+          全球首发 · 工业 AI IDE
+        </div>
+        <h1>
+          大模型会掷骰子，<br/>但<span class="highlight">物理法则</span>不会。
+        </h1>
+        <p class="hero-subtitle">
+          全球首个带有<strong>微秒级物理防撞沙盒</strong>的工业 AI IDE。<br/>
+          仅需表格与文档，一杯咖啡的时间，自动生成百万级非标产线的"大脑"与应用层源码。
+        </p>
+        <div class="hero-cta-group">
+          <button class="btn-primary" onclick="document.getElementById('footer-cta').scrollIntoView({behavior:'smooth'})">
+            ⚡ 免费下载 社区版 (Win 64-bit)
+            <span class="btn-sub">内置 500 算力晶体，立即体验代码狂飙</span>
+          </button>
+          <button class="btn-secondary">
+            📅 预约企业级演示
+          </button>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="code-terminal">
+          <div class="terminal-header">
+            <div class="terminal-dot red"></div>
+            <div class="terminal-dot yellow"></div>
+            <div class="terminal-dot green"></div>
+            <span class="terminal-title">AutoForge Studio — main.afc</span>
+          </div>
+          <div class="terminal-body">
+            <div class="terminal-input">
+              <span class="terminal-prompt">总工 &gt;</span>
+              <span class="terminal-user-input">对接华为 MES 协议，并让三轴平台完成飞拍</span>
+            </div>
+            <div class="code-output" id="hero-code-output">
+              <div class="line"><span class="code-comment">// AutoForge AI 正在生成代码...</span></div>
+              <div class="line"><span class="code-keyword">using</span> AutoForge.Skills.Camera;</div>
+              <div class="line"><span class="code-keyword">using</span> AutoForge.Skills.Motion;</div>
+              <div class="line"></div>
+              <div class="line"><span class="code-keyword">public class</span> <span class="code-type">FlyCapture</span> : <span class="code-type">SkillBase</span></div>
+              <div class="line"><span class="code-bracket">{</span></div>
+              <div class="line">  <span class="code-keyword">public async</span> <span class="code-type">Task</span> <span class="code-function">ExecuteAsync</span>()</div>
+              <div class="line">  <span class="code-bracket">{</span></div>
+              <div class="line">    <span class="code-comment">// 连接华为 MES</span></div>
+              <div class="line">    <span class="code-keyword">await</span> MES.<span class="code-function">ConnectAsync</span>(<span class="code-string">"huawei-mes"</span>);</div>
+              <div class="line"></div>
+              <div class="line">    <span class="code-comment">// 三轴平台飞拍序列</span></div>
+              <div class="line">    <span class="code-keyword">var</span> path = Trajectory.<span class="code-function">Plan</span>(</div>
+              <div class="line">      start: <span class="code-keyword">new</span> <span class="code-type">Pos3D</span>(<span class="code-number">0</span>, <span class="code-number">0</span>, <span class="code-number">50</span>),</div>
+              <div class="line">      targets: Recipe.<span class="code-function">GetWaypoints</span>()</div>
+              <div class="line">    );</div>
+              <div class="line"></div>
+              <div class="line">    <span class="code-keyword">await</span> Axis.<span class="code-function">FlyThrough</span>(path, speed: <span class="code-number">800</span>);</div>
+              <div class="line">    <span class="code-keyword">await</span> Camera.<span class="code-function">TriggerAsync</span>();</div>
+              <div class="line">  <span class="code-bracket">}</span></div>
+              <div class="line"><span class="code-bracket">}</span></div>
+            </div>
+            <span class="typing-cursor"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======== SECTION 2: MAGIC MOMENT ======== -->
+  <section class="magic-section" id="magic">
+    <div class="container">
+      <div class="section-head reveal">
+        <h2 class="section-title">告别盲写与撞机。<br/><span class="blue-gradient-text">图、码、AI 的原子级共振。</span></h2>
+        <p class="section-subtitle">三大核心工作区实时联动，所见即所得的工业开发范式。</p>
+      </div>
+      <div class="bento-grid">
+
+        <!-- Card A: Digital Twin -->
+        <div class="bento-card reveal reveal-delay-1" data-bento="A">
+          <div class="bento-card-icon">🔮</div>
+          <h3 class="bento-card-title">数字孪生区</h3>
+          <p class="bento-card-desc">可视化 SFC 流程图与设备拓扑，工艺逻辑一目了然。</p>
+          <div class="bento-card-visual">
+            <div class="sfc-flow">
+              <div class="sfc-node start">▶ START</div>
+              <div class="sfc-arrow">↓</div>
+              <div class="sfc-node process">气缸伸出 Cylinder.Extend()</div>
+              <div class="sfc-arrow">↓</div>
+              <div class="sfc-node decision">⬦ 传感器到位?</div>
+              <div class="sfc-arrow">↓</div>
+              <div class="sfc-node process">真空吸取 Vacuum.On()</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card B: Code Surgery -->
+        <div class="bento-card reveal reveal-delay-2" data-bento="B">
+          <div class="bento-card-icon">⌨️</div>
+          <h3 class="bento-card-title">代码手术台</h3>
+          <p class="bento-card-desc">所见即所得，代码与工艺图纸双向绑定。</p>
+          <div class="bento-card-visual">
+            <div class="code-line-active"><span class="code-number" style="opacity:0.4;margin-right:12px;">12</span><span class="code-keyword">await</span> Cylinder.<span class="code-function">ExtendAsync</span>();</div>
+            <div><span class="code-number" style="opacity:0.4;margin-right:12px;color:#5c6370">13</span><span style="color:#5c6370">// 等待传感器信号</span></div>
+            <div><span class="code-number" style="opacity:0.4;margin-right:12px;color:#5c6370">14</span><span style="color:#abb2bf"><span class="code-keyword">await</span> Sensor.WaitAsync();</span></div>
+            <div class="code-line-active"><span class="code-number" style="opacity:0.4;margin-right:12px;">15</span><span class="code-keyword">await</span> Vacuum.<span class="code-function">OnAsync</span>();</div>
+            <div><span class="code-number" style="opacity:0.4;margin-right:12px;color:#5c6370">16</span><span style="color:#5c6370">// 搬运完成</span></div>
+          </div>
+        </div>
+
+        <!-- Card C: AI Team Lead -->
+        <div class="bento-card reveal reveal-delay-3" data-bento="C">
+          <div class="bento-card-icon">🤖</div>
+          <h3 class="bento-card-title">AI Team Lead</h3>
+          <p class="bento-card-desc">工业级 Copilot 伴写，从 Bug 诊断到架构重构，随叫随到。</p>
+          <div class="bento-card-visual">
+            <div class="diff-view">
+              <div class="diff-line-remove">- await Task.Delay(500);</div>
+              <div class="diff-line-remove">- sensor.Read();</div>
+              <div class="diff-line-add">+ await Sensor.WaitAsync(</div>
+              <div class="diff-line-add">+   timeout: TimeSpan.FromMs(500)</div>
+              <div class="diff-line-add">+ );</div>
+              <div class="diff-line-context">  Logger.Info("传感器响应完成");</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======== SECTION 3: PHYSICAL DEFENSE ======== -->
+  <section class="defense-section" id="defense">
+    <div class="container">
+      <div class="defense-content">
+        <h2 class="section-title reveal">你可以写错代码，<br/>但<span class="red-gradient-text">机器绝不会撞。</span></h2>
+
+        <div class="defense-code-block reveal reveal-delay-1">
+          <div class="defense-code-header">
+            <div class="terminal-dot red"></div>
+            <div class="terminal-dot yellow"></div>
+            <div class="terminal-dot green"></div>
+            <span class="terminal-title">motion_control.cs</span>
+          </div>
+          <div class="defense-code-body">
+            <span class="defense-code-line squiggly-underline" id="danger-code">
+              <span class="code-type">Axis_Z</span>.<span class="code-function">Move</span>(<span class="code-number">-9999</span>);
+            </span>
+          </div>
+        </div>
+
+        <div class="alarm-box" id="alarm-box">
+          <div class="alarm-title">
+            <span class="alarm-icon">🚨</span>[底座拦截触发]
+          </div>
+          <div class="alarm-text">
+            Z轴坐标越出设备干涉包络面，即将发生物理碰撞！<br/>
+            编译已被锁定，请修正。
+          </div>
+        </div>
+
+        <p class="defense-description reveal reveal-delay-2">
+          无论应用层 AI 发生何种幻觉，底层闭源 C++ 物理沙盒会在<strong style="color:var(--text-primary)">微秒级</strong>切断致命脉冲。<br/>
+          AutoForge 将"安全"写进了编译器的基因里。
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======== SECTION 4: ECOSYSTEM ======== -->
+  <section class="ecosystem-section" id="ecosystem">
+    <div class="container">
+      <div class="section-head reveal">
+        <h2 class="section-title">不被巨头绑架。<br/><span class="blue-gradient-text">万国牌硬件，一键接入。</span></h2>
+        <p class="section-subtitle">我们不造硬件，我们只做硬件的翻译官。通过标准 JSON Skill 插件，全球顶尖工控外设已被封装为您触手可及的极简函数。</p>
+      </div>
+    </div>
+
+    <div class="logo-marquee-wrapper">
+      <div class="logo-marquee" id="logo-marquee">
+        <!-- Row 1 (duplicated for infinite scroll) -->
+        <div class="logo-item">
+          <div class="logo-flipper">
+            <div class="logo-front"><span class="logo-text">KEYENCE</span></div>
+            <div class="logo-back"><code>await AutoForge.Skills<br/>.Keyence.TriggerAsync();</code></div>
+          </div>
+        </div>
+        <div class="logo-item">
+          <div class="logo-flipper">
+            <div class="logo-front"><span class="logo-text">COGNEX</span></div>
+            <div class="logo-back"><code>await AutoForge.Skills<br/>.Cognex.InspectAsync();</code></div>
+          </div>
+        </div>
+        <div class="logo-item">
+          <div class="logo-flipper">
+            <div class="logo-front"><span class="logo-text">汇川 Inovance</span></div>
+            <div class="logo-back"><code>await AutoForge.Skills<br/>.Inovance.ServoOnAsync();</code></div>
+          </div>
+        </div>
+        <div class="logo-item">
+          <div class="logo-flipper">
+            <div class="logo-front"><span class="logo-text">BECKHOFF</span></div>
+            <div class="logo-back"><code>await AutoForge.Skills<br/>.Beckhoff.ReadAdsAsync();</code></div>
+          </div>
+        </div>
+        <div class="logo-item">
+          <div class="logo-flipper">
+            <div class="logo-front"><span class="logo-text">OMRON</span></div>
+            <div class="logo-back"><code>await AutoForge.Skills<br/>.Omron.PlcWriteAsync();</code></div>
+          </div>
+        </div>
+        <div class="logo-item">
+          <div class="logo-flipper">
+            <div class="logo-front"><span class="logo-text">FANUC</span></div>
+            <div class="logo-back"><code>await AutoForge.Skills<br/>.Fanuc.MoveJointAsync();</code></div>
+          </div>
+        </div>
+        <div class="logo-item">
+          <div class="logo-flipper">
+            <div class="logo-front"><span class="logo-text">SIEMENS</span></div>
+            <div class="logo-back"><code>await AutoForge.Skills<br/>.Siemens.S7ReadAsync();</code></div>
+          </div>
+        </div>
+        <div class="logo-item">
+          <div class="logo-flipper">
+            <div class="logo-front"><span class="logo-text">ABB</span></div>
+            <div class="logo-back"><code>await AutoForge.Skills<br/>.ABB.RapidExecAsync();</code></div>
+          </div>
+        </div>
+        <!-- Duplicate for seamless loop -->
+        <div class="logo-item">
+          <div class="logo-flipper">
+            <div class="logo-front"><span class="logo-text">KEYENCE</span></div>
+            <div class="logo-back"><code>await AutoForge.Skills<br/>.Keyence.TriggerAsync();</code></div>
+          </div>
+        </div>
+        <div class="logo-item">
+          <div class="logo-flipper">
+            <div class="logo-front"><span class="logo-text">COGNEX</span></div>
+            <div class="logo-back"><code>await AutoForge.Skills<br/>.Cognex.InspectAsync();</code></div>
+          </div>
+        </div>
+        <div class="logo-item">
+          <div class="logo-flipper">
+            <div class="logo-front"><span class="logo-text">汇川 Inovance</span></div>
+            <div class="logo-back"><code>await AutoForge.Skills<br/>.Inovance.ServoOnAsync();</code></div>
+          </div>
+        </div>
+        <div class="logo-item">
+          <div class="logo-flipper">
+            <div class="logo-front"><span class="logo-text">BECKHOFF</span></div>
+            <div class="logo-back"><code>await AutoForge.Skills<br/>.Beckhoff.ReadAdsAsync();</code></div>
+          </div>
+        </div>
+        <div class="logo-item">
+          <div class="logo-flipper">
+            <div class="logo-front"><span class="logo-text">OMRON</span></div>
+            <div class="logo-back"><code>await AutoForge.Skills<br/>.Omron.PlcWriteAsync();</code></div>
+          </div>
+        </div>
+        <div class="logo-item">
+          <div class="logo-flipper">
+            <div class="logo-front"><span class="logo-text">FANUC</span></div>
+            <div class="logo-back"><code>await AutoForge.Skills<br/>.Fanuc.MoveJointAsync();</code></div>
+          </div>
+        </div>
+        <div class="logo-item">
+          <div class="logo-flipper">
+            <div class="logo-front"><span class="logo-text">SIEMENS</span></div>
+            <div class="logo-back"><code>await AutoForge.Skills<br/>.Siemens.S7ReadAsync();</code></div>
+          </div>
+        </div>
+        <div class="logo-item">
+          <div class="logo-flipper">
+            <div class="logo-front"><span class="logo-text">ABB</span></div>
+            <div class="logo-back"><code>await AutoForge.Skills<br/>.ABB.RapidExecAsync();</code></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======== SECTION 5: PRICING ======== -->
+  <section class="pricing-section" id="pricing">
+    <div class="container">
+      <div class="section-head reveal">
+        <h2 class="section-title">不收单机硬件税，<br/><span class="blue-gradient-text">只为创造力买单。</span></h2>
+        <p class="section-subtitle">透明定价，无隐藏费用。您生成的软件，利润 100% 归您所有。</p>
+      </div>
+
+      <div class="pricing-grid">
+        <!-- Starter -->
+        <div class="pricing-card reveal reveal-delay-1">
+          <div class="pricing-plan-name">探索版 Starter</div>
+          <div class="pricing-price">免费</div>
+          <p class="pricing-description">快速上手，感受 AI 生成代码的魅力</p>
+          <ul class="pricing-features">
+            <li><span class="check">✓</span> 500 算力晶体</li>
+            <li><span class="check">✓</span> AutoForge Studio 完整 IDE</li>
+            <li><span class="check">✓</span> 社区技能插件市场</li>
+            <li><span class="check">✓</span> 基础 AI 代码生成</li>
+            <li class="highlight-text"><span class="check" style="color:var(--red-primary)">!</span> 含防撞 DLL 2 小时运行水印限制，仅限测试打样</li>
+          </ul>
+          <button class="btn-pricing outline">开始探索</button>
+        </div>
+
+        <!-- Pro (Featured) -->
+        <div class="pricing-card featured reveal reveal-delay-2">
+          <div class="pricing-badge">👑 极力推荐</div>
+          <div class="pricing-plan-name">专业版 Pro</div>
+          <div class="pricing-price"><span class="currency">¥</span>3,899 <span class="period">/ 年</span></div>
+          <p class="pricing-description">告别算力焦虑，释放全部生产力</p>
+          <ul class="pricing-features">
+            <li><span class="check">✓</span> <strong>30,000 算力晶体</strong></li>
+            <li><span class="check">✓</span> 解锁纯净版 DLL，无限机器部署</li>
+            <li><span class="check">✓</span> <strong>永久免收单机 License 费</strong></li>
+            <li><span class="check">✓</span> 高级 AI 架构重构能力</li>
+            <li><span class="check">✓</span> 优先技术支持</li>
+            <li><span class="check">✓</span> 全部技能插件市场</li>
+          </ul>
+          <button class="btn-pricing primary">立即订阅 Pro</button>
+        </div>
+
+        <!-- Enterprise -->
+        <div class="pricing-card reveal reveal-delay-3">
+          <div class="pricing-plan-name">集团版 Enterprise</div>
+          <div class="pricing-price">咨询定价</div>
+          <p class="pricing-description">为大型组织量身定制</p>
+          <ul class="pricing-features">
+            <li><span class="check">✓</span> 无限算力晶体</li>
+            <li><span class="check">✓</span> 私有大模型本地部署</li>
+            <li><span class="check">✓</span> 白盒安全审计</li>
+            <li><span class="check">✓</span> 专属客户成功经理</li>
+            <li><span class="check">✓</span> 自定义 SLA</li>
+            <li><span class="check">✓</span> API 批量集成</li>
+          </ul>
+          <button class="btn-pricing outline">联系销售团队</button>
+        </div>
+      </div>
+
+      <p class="pricing-bottom-note reveal reveal-delay-4">
+        告别传统设备商动辄 <strong style="color:var(--text-primary)">5000 元/台</strong> 的运行税，<br/>
+        您生成的软件，利润 100% 归您所有。
+      </p>
+    </div>
+  </section>
+
+  <!-- ======== SECTION 6: FOOTER CTA ======== -->
+  <section class="footer-cta-section" id="footer-cta">
+    <div class="container">
+      <p class="footer-cta-tagline reveal">
+        "你的竞争对手，刚刚用喝咖啡的时间<br/>交付了下一个订单。"
+      </p>
+      <p class="footer-cta-tagline-en reveal reveal-delay-1">
+        Your competitors just delivered their next order over a coffee break.
+      </p>
+      <button class="btn-mega-cta reveal reveal-delay-2" onclick="alert('下载链接即将开放，敬请期待！')">
+        立即下载 AutoForge 开启工业进化 →
+      </button>
+    </div>
+  </section>
+
+  <!-- ======== FOOTER ======== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-links">
+        <a href="#">开发者文档</a>
+        <a href="#">GitHub 讨论区</a>
+        <a href="#">加入社群</a>
+        <a href="#">关于我们</a>
+      </div>
+      <p class="footer-copy">© 2025 AutoForge Inc. 保留所有权利 · 粤ICP备XXXXXXXX号</p>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>

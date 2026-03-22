@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AutoForge — 现有框架的超级增效引擎 | 告别人工适配</title>
+  <meta name="description" content="AutoForge 无缝接入您的模块化设备库，将 3-5 天的非标胶水代码、权限配置与 MES 联调时间，压缩至 10 分钟。无需推翻现有架构。" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="css/hitl.css" />
+  <link rel="stylesheet" href="css/compare.css" />
+  <link rel="stylesheet" href="css/tech.css" />
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+</head>
+
+<body>
+
+  <nav class="navbar" id="navbar">
+    <a href="#" class="nav-brand">
+      <div class="brand-mark">AF</div>
+      <span>AutoForge</span>
+    </a>
+    <ul class="nav-menu">
+      <li><a href="index.html">返回选择页</a></li>
+      <li><a href="#pain">价值场景</a></li>
+      <li><a href="#compare">AI 对比</a></li>
+      <li><a href="#hitl">HITL 机制</a></li>
+      <li><a href="#tech">技术原理</a></li>
+      <li><a href="#workflow">工作流</a></li>
+      <li><a href="#cta" class="nav-cta-btn">预约演示</a></li>
+    </ul>
+  </nav>
+
+  <section class="hero" id="hero">
+    <div class="hero-grid-bg"></div>
+    <div class="hero-blob hero-blob-1"></div>
+    <div class="hero-blob hero-blob-2"></div>
+    <div class="hero-blob hero-blob-3"></div>
+
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span class="badge-pulse"></span>
+          面向成熟框架企业 · 非侵入式 AI 增强
+        </div>
+
+        <h1>
+          让您的标准化框架，<br />
+          彻底告别<span class="gradient-text">"人工适配"</span>的阵痛。
+        </h1>
+
+        <p class="hero-desc">
+          无需推翻现有架构。AutoForge 无缝接入公司的模块化设备库，将
+          <strong>3-5 天的非标胶水代码、权限配置与 MES 联调时间</strong>，
+          压缩至一杯咖啡的时间。
+        </p>
+
+        <div class="hero-actions">
+          <button class="btn-fill" id="btn-demo">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="5 3 19 12 5 21 5 3" />
+            </svg>
+            预约专属演示
+          </button>
+          <button class="btn-outline" id="btn-whitepaper">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" />
+              <polyline points="14 2 14 8 20 8" />
+            </svg>
+            下载白皮书
+          </button>
+        </div>
+
+        <div class="hero-stats">
+          <div class="stat-item">
+            <div class="stat-value blue" data-target="10">0<span class="stat-unit">分钟</span></div>
+            <div class="stat-label">适配一台新机型</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-value green">100<span class="stat-unit">%</span></div>
+            <div class="stat-label">代码风格统一</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-value amber">0<span class="stat-unit">遗漏</span></div>
+            <div class="stat-label">报警/权限全覆盖</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="puzzle-container">
+          <div class="scan-beam"></div>
+          <div class="puzzle-piece piece-1" id="pp1">I/O_Map.xlsx</div>
+          <div class="puzzle-piece piece-2" id="pp2">alarm_matrix[]</div>
+          <div class="puzzle-piece piece-3" id="pp3">MES_Auth.json</div>
+          <div class="puzzle-piece piece-4" id="pp4">permission_tree</div>
+          <div class="puzzle-piece piece-5" id="pp5">viewmodel_bind</div>
+
+          <div class="puzzle-base">
+            <div class="base-label">公司核心框架 · 稳如泰山</div>
+            <div class="base-grid">
+              <div class="base-block">MotionLib</div>
+              <div class="base-block">VisionLib</div>
+              <div class="base-block">UI Kit</div>
+              <div class="base-block">IODriver</div>
+              <div class="base-block">Logger</div>
+              <div class="base-block">Config</div>
+              <div class="base-block">DataBus</div>
+              <div class="base-block">Security</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="pain-section" id="pain">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-tag">Value Proposition</div>
+        <h2 class="section-title">为什么现成框架依然需要 AI 增强？</h2>
+        <p class="section-subtitle">
+          框架解决了 80% 的标准化问题。但剩下 20% 的非标适配、人为遗漏和 MES 对接，
+          正在吞噬您最宝贵的工程师时间。
+        </p>
+      </div>
+
+      <div class="pain-grid">
+        <div class="pain-card reveal stagger-1">
+          <div class="pain-card-top">
+            <div class="pain-icon"><i data-lucide="palette"></i></div>
+            <div class="pain-label">Pain Point #1</div>
+            <div class="pain-title">代码风格碎裂</div>
+            <div class="pain-desc">
+              不同工程师适配非标动作时风格各异，命名混乱，异常捕获缺失。离职交接如同灾难。
+            </div>
+          </div>
+          <div class="card-divider"><span class="arrow-down"><i data-lucide="chevron-down" class="lucide-sm"></i></span></div>
+          <div class="pain-card-bottom">
+            <div class="solution-label">AutoForge 赋能</div>
+            <div class="solution-title">100% 绝对统一</div>
+            <div class="solution-desc">
+              AI 严格学习贵司编码规范模板。命名、异常捕获、日志注入 100% 像同一位最严谨的总工写出来的。
+            </div>
+          </div>
+        </div>
+
+        <div class="pain-card reveal stagger-2">
+          <div class="pain-card-top">
+            <div class="pain-icon"><i data-lucide="alert-triangle"></i></div>
+            <div class="pain-label">Pain Point #2</div>
+            <div class="pain-title">人为遗漏风险</div>
+            <div class="pain-desc">
+              赶交期时极易漏写边缘气缸的防撞报警或操作员降级权限，导致现场客诉甚至安全事故。
+            </div>
+          </div>
+          <div class="card-divider"><span class="arrow-down"><i data-lucide="chevron-down" class="lucide-sm"></i></span></div>
+          <div class="pain-card-bottom">
+            <div class="solution-label">AutoForge 赋能</div>
+            <div class="solution-title">穷举式安全生成</div>
+            <div class="solution-desc">
+              基于硬件拓扑，AI 强制全量状态机遍历，自动生成所有极限报警逻辑与权限树。消灭"工程师的粗心"。
+            </div>
+          </div>
+        </div>
+
+        <div class="pain-card reveal stagger-3">
+          <div class="pain-card-top">
+            <div class="pain-icon"><i data-lucide="monitor"></i></div>
+            <div class="pain-label">Pain Point #3</div>
+            <div class="pain-title">软件人力瓶颈</div>
+            <div class="pain-desc">
+              资深大牛被困在改点位、调 UI 等低级适配中。新机型排期极其困难，核心研发被搁置。
+            </div>
+          </div>
+          <div class="card-divider"><span class="arrow-down"><i data-lucide="chevron-down" class="lucide-sm"></i></span></div>
+          <div class="pain-card-bottom">
+            <div class="solution-label">AutoForge 赋能</div>
+            <div class="solution-title">释放核心研发算力</div>
+            <div class="solution-desc">
+              初级工程师导入 I/O 表和组件清单，用自然语言生成适配代码。让大牛回归核心算法研发。
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="compare-section" id="compare">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-tag">Why Workflow Wins</div>
+        <h2 class="section-title">为什么"让 AI 直接写"行不通？</h2>
+        <p class="section-subtitle">
+          纯 AI 生成代码看似美好，实则暗藏致命陷阱。AutoForge 采用工作流驱动的方式，
+          从根本上解决了这些问题。
+        </p>
+      </div>
+
+      <div class="compare-table reveal">
+        <div class="compare-column compare-bad">
+          <div class="compare-header">
+            <div class="compare-icon"><i data-lucide="x-circle"></i></div>
+            <h3>纯 AI "直接写"</h3>
+            <div class="compare-subtitle">Copilot / ChatGPT / 通用大模型</div>
+          </div>
+          <ul class="compare-list">
+            <li>
+              <div class="compare-item-icon fail"><i data-lucide="x" class="lucide-xs"></i></div>
+              <div>
+                <strong>幻觉问题 (Hallucination)</strong>
+                <span>AI 编造不存在的 API 名称、虚构参数签名，编译直接报错</span>
+              </div>
+            </li>
+            <li>
+              <div class="compare-item-icon fail"><i data-lucide="x" class="lucide-xs"></i></div>
+              <div>
+                <strong>风格不一致</strong>
+                <span>每次生成的命名风格、异常处理、日志格式都可能不同</span>
+              </div>
+            </li>
+            <li>
+              <div class="compare-item-icon fail"><i data-lucide="x" class="lucide-xs"></i></div>
+              <div>
+                <strong>上下文窗口有限</strong>
+                <span>无法同时理解整个项目架构，生成的代码往往不符合既有模式</span>
+              </div>
+            </li>
+            <li>
+              <div class="compare-item-icon fail"><i data-lucide="x" class="lucide-xs"></i></div>
+              <div>
+                <strong>无法调用真实工具链</strong>
+                <span>不能编译验证、不能跑测试、不能分析硬件拓扑</span>
+              </div>
+            </li>
+            <li>
+              <div class="compare-item-icon fail"><i data-lucide="x" class="lucide-xs"></i></div>
+              <div>
+                <strong>不可控 &amp; 不可追溯</strong>
+                <span>黑盒生成，无法解释为什么这么写，出了问题难以定位</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="compare-vs">
+          <span>VS</span>
+        </div>
+
+        <div class="compare-column compare-good">
+          <div class="compare-header">
+            <div class="compare-icon"><i data-lucide="check-circle-2"></i></div>
+            <h3>AutoForge 工作流</h3>
+            <div class="compare-subtitle">结构化 Agent + 确定性模板 + 人工审核</div>
+          </div>
+          <ul class="compare-list">
+            <li>
+              <div class="compare-item-icon pass"><i data-lucide="check" class="lucide-xs"></i></div>
+              <div>
+                <strong>零幻觉：Skill + 模板兜底</strong>
+                <span>API 签名来自解析后的 DLL 元数据，不靠 AI 记忆；确定性模板保证框架调用正确</span>
+              </div>
+            </li>
+            <li>
+              <div class="compare-item-icon pass"><i data-lucide="check" class="lucide-xs"></i></div>
+              <div>
+                <strong>100% 风格统一</strong>
+                <span>所有代码由公司标准模板渲染，AI 只填充业务差异部分，风格天然统一</span>
+              </div>
+            </li>
+            <li>
+              <div class="compare-item-icon pass"><i data-lucide="check" class="lucide-xs"></i></div>
+              <div>
+                <strong>分阶段工作流，逐步深入</strong>
+                <span>每个 Agent 只处理一个明确子任务，完美切分上下文边界</span>
+              </div>
+            </li>
+            <li>
+              <div class="compare-item-icon pass"><i data-lucide="check" class="lucide-xs"></i></div>
+              <div>
+                <strong>闭环验证</strong>
+                <span>每一阶段输出都经过编译验证和沙盒测试，失败自动回滚重试</span>
+              </div>
+            </li>
+            <li>
+              <div class="compare-item-icon pass"><i data-lucide="check" class="lucide-xs"></i></div>
+              <div>
+                <strong>全链路透明 &amp; 可审计</strong>
+                <span>每一步决策有日志、有上下文、有 diff，满足工业审计要求</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="compare-insight reveal">
+        <div class="insight-icon"><i data-lucide="lightbulb"></i></div>
+        <div class="insight-content">
+          <div class="insight-title">核心区别：AutoForge 不是"让 AI 自由发挥"</div>
+          <div class="insight-desc">
+            我们把 AI 置于一条<strong>严格受控的工业流水线</strong>上。每个 Agent 的输入、输出、
+            约束条件都是确定的。AI 只在被允许的空间内发挥创造力，其余部分全部由
+            <strong>确定性模板和编译器</strong>保证正确性。这就像让 AI 在"护栏"里跑，
+            而不是在旷野上自由奔跑。
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="hitl-section" id="hitl">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-tag">Human in the Loop</div>
+        <h2 class="section-title">AI 不是替代者，<span class="gradient-text">工程师才是决策者。</span></h2>
+        <p class="section-subtitle">
+          AutoForge 的每一步生成都经过工程师的审查与确认。AI 负责繁重的代码搬运，
+          人类负责关键的工程判断 —— 这就是 Human in the Loop。
+        </p>
+      </div>
+
+      <div class="hitl-flow reveal">
+        <div class="hitl-node hitl-ai">
+          <div class="hitl-node-icon"><i data-lucide="bot"></i></div>
+          <div class="hitl-node-content">
+            <div class="hitl-node-role">AI Agent</div>
+            <div class="hitl-node-title">草案生成</div>
+            <div class="hitl-node-desc">根据硬件拓扑与框架规范，AI 自动生成代码草案、报警矩阵、权限树</div>
+          </div>
+          <div class="hitl-node-badge ai-badge">自动</div>
+        </div>
+
+        <div class="hitl-arrow">
+          <svg width="40" height="24" viewBox="0 0 40 24" fill="none">
+            <path d="M2 12 L30 12" stroke="var(--blue)" stroke-width="2" stroke-dasharray="4 3"/>
+            <path d="M28 6 L36 12 L28 18" stroke="var(--blue)" stroke-width="2" fill="none"/>
+          </svg>
+        </div>
+
+        <div class="hitl-node hitl-human">
+          <div class="hitl-node-icon"><i data-lucide="user-check"></i></div>
+          <div class="hitl-node-content">
+            <div class="hitl-node-role">工程师</div>
+            <div class="hitl-node-title">审查 &amp; 修正</div>
+            <div class="hitl-node-desc">Diff 视图逐行审查，标注修改意见，确认或驳回各模块代码段</div>
+          </div>
+          <div class="hitl-node-badge human-badge">人工审核</div>
+        </div>
+
+        <div class="hitl-arrow">
+          <svg width="40" height="24" viewBox="0 0 40 24" fill="none">
+            <path d="M2 12 L30 12" stroke="var(--green)" stroke-width="2" stroke-dasharray="4 3"/>
+            <path d="M28 6 L36 12 L28 18" stroke="var(--green)" stroke-width="2" fill="none"/>
+          </svg>
+        </div>
+
+        <div class="hitl-node hitl-ai">
+          <div class="hitl-node-icon"><i data-lucide="settings"></i></div>
+          <div class="hitl-node-content">
+            <div class="hitl-node-role">AI Agent</div>
+            <div class="hitl-node-title">迭代修改</div>
+            <div class="hitl-node-desc">根据工程师反馈自动修订；每一轮修改都记录 changelog，可追溯</div>
+          </div>
+          <div class="hitl-node-badge ai-badge">自动</div>
+        </div>
+
+        <div class="hitl-arrow">
+          <svg width="40" height="24" viewBox="0 0 40 24" fill="none">
+            <path d="M2 12 L30 12" stroke="var(--green)" stroke-width="2" stroke-dasharray="4 3"/>
+            <path d="M28 6 L36 12 L28 18" stroke="var(--green)" stroke-width="2" fill="none"/>
+          </svg>
+        </div>
+
+        <div class="hitl-node hitl-human hitl-final">
+          <div class="hitl-node-icon"><i data-lucide="shield-check"></i></div>
+          <div class="hitl-node-content">
+            <div class="hitl-node-role">工程师</div>
+            <div class="hitl-node-title">最终确认</div>
+            <div class="hitl-node-desc">签核通过后一键合并到项目；未签核的代码绝不进入生产环境</div>
+          </div>
+          <div class="hitl-node-badge human-badge">签核</div>
+        </div>
+      </div>
+
+      <div class="hitl-principles">
+        <div class="hitl-principle reveal stagger-1">
+          <div class="principle-icon"><i data-lucide="lock"></i></div>
+          <div class="principle-title">AI 无权直接提交</div>
+          <div class="principle-desc">
+            所有 AI 生成的代码都处于沙盒隔离状态。必须经过工程师的显式"Approve"操作，才能合并进工程项目。
+            <strong>没有人类签核，代码不出沙盒。</strong>
+          </div>
+        </div>
+        <div class="hitl-principle reveal stagger-2">
+          <div class="principle-icon"><i data-lucide="refresh-cw"></i></div>
+          <div class="principle-title">多轮迭代审查</div>
+          <div class="principle-desc">
+            不满意？直接标注修改意见，AI 会根据反馈重新生成。支持无限次迭代，直到工程师完全满意。
+            <strong>审查成本 &lt; 手写成本的 10%。</strong>
+          </div>
+        </div>
+        <div class="hitl-principle reveal stagger-3">
+          <div class="principle-icon"><i data-lucide="clipboard-list"></i></div>
+          <div class="principle-title">全链路可追溯</div>
+          <div class="principle-desc">
+            每一次 AI 生成、人工审查、修改的时间戳和操作者都被完整记录。
+            <strong>满足 ISO 13485 / IEC 62304 等合规要求。</strong>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="mes-section" id="mes">
+    <div class="container">
+      <div class="mes-layout">
+        <div class="mes-content reveal-left">
+          <div class="section-tag">MES Integration</div>
+          <h2>连线即上云，<br />告别 <span class="highlight">100 页 MES 接口文档。</span></h2>
+          <p class="mes-lead">
+            扔进甲方提供的 API 文档，AutoForge 在 3 分钟内为您生成 100% 贴合现有框架的
+            MES 通信类、数据映射关系与断点续传逻辑。
+          </p>
+
+          <div class="mes-features">
+            <div class="mes-feature">
+              <div class="mes-feature-icon"><i data-lucide="file-text"></i></div>
+              <div>
+                <div class="mes-feature-title">文档即代码 (Doc-to-Code)</div>
+                <div class="mes-feature-desc">
+                  大模型深度阅读 Swagger/PDF 文档，自动生成包含鉴权、Token 刷新的全套 HTTP/MQTT 通讯模块。
+                </div>
+              </div>
+            </div>
+            <div class="mes-feature">
+              <div class="mes-feature-icon"><i data-lucide="shield"></i></div>
+              <div>
+                <div class="mes-feature-title">异步沙盒，绝不卡机 (IT/OT Decoupling)</div>
+                <div class="mes-feature-desc">
+                  自动隔离控制线程与网络线程。厂区网络再烂，主轴节拍照样全速跑。
+                </div>
+              </div>
+            </div>
+            <div class="mes-feature">
+              <div class="mes-feature-icon"><i data-lucide="package"></i></div>
+              <div>
+                <div class="mes-feature-title">断网本地缓存 (Auto-Resume)</div>
+                <div class="mes-feature-desc">
+                  自动生成 SQLite 本地转储逻辑。网络中断数据自动落盘，恢复后静默续传，"一条不丢"。
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mes-code-panel reveal-right" id="mes-code-panel">
+          <div class="code-panel-header">
+            <span class="code-dot r"></span>
+            <span class="code-dot y"></span>
+            <span class="code-dot g"></span>
+            <span class="code-panel-title">MesAsyncClient.cs — AI 生成</span>
+          </div>
+          <div class="code-panel-body" id="mes-terminal"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="tech-section" id="tech">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-tag">Under the Hood</div>
+        <h2 class="section-title">技术原理一览</h2>
+        <p class="section-subtitle">
+          AutoForge 的核心并非"一个大模型"，而是一套协作式 Agent 工作流 + 确定性代码渲染引擎。
+        </p>
+      </div>
+
+      <div class="tech-arch reveal">
+        <div class="tech-layer tech-layer-input">
+          <div class="tech-layer-label"><i data-lucide="arrow-down-circle" class="lucide-inline"></i> 输入层</div>
+          <div class="tech-layer-items">
+            <div class="tech-chip">I/O 点位表 (Excel)</div>
+            <div class="tech-chip">硬件 BOM 清单</div>
+            <div class="tech-chip">MES API 文档</div>
+            <div class="tech-chip">自然语言描述</div>
+          </div>
+        </div>
+
+        <div class="tech-flow-arrow">
+          <div class="tech-flow-line"></div>
+        </div>
+
+        <div class="tech-layer tech-layer-core">
+          <div class="tech-layer-label"><i data-lucide="cpu" class="lucide-inline"></i> 核心引擎</div>
+          <div class="tech-core-grid">
+            <div class="tech-core-card">
+              <div class="tech-core-icon"><i data-lucide="search"></i></div>
+              <div class="tech-core-title">Skill 匹配引擎</div>
+              <div class="tech-core-desc">
+                通过解析 DLL / NuGet 包的反射元数据，构建 <code>skill.json</code> 描述文件。
+                Agent 按硬件类型查表匹配可用 Skill，消除 AI "幻觉" API 调用。
+              </div>
+            </div>
+            <div class="tech-core-card">
+              <div class="tech-core-icon"><i data-lucide="layout-template"></i></div>
+              <div class="tech-core-title">确定性模板引擎</div>
+              <div class="tech-core-desc">
+                MainWindow、Service、ViewModel 等结构由 <code>Scriban</code> 模板渲染。
+                框架调用代码 100% 确定生成，杜绝 AI 篡改框架层级接口。
+              </div>
+            </div>
+            <div class="tech-core-card">
+              <div class="tech-core-icon"><i data-lucide="bot"></i></div>
+              <div class="tech-core-title">多阶段 Agent 编排</div>
+              <div class="tech-core-desc">
+                每个 Agent 只处理一个子任务（如 PLC 驱动、视觉流程、I/O 映射）。
+                编排器按依赖关系调度，前一阶段的输出是后一阶段的输入。
+              </div>
+            </div>
+            <div class="tech-core-card">
+              <div class="tech-core-icon"><i data-lucide="flask-conical"></i></div>
+              <div class="tech-core-title">沙盒编译验证</div>
+              <div class="tech-core-desc">
+                每一阶段生成的代码都在隔离沙盒中执行 <code>dotnet build</code>。
+                编译失败自动携带错误上下文回传 Agent 进行修复，最多 N 轮重试。
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="tech-flow-arrow">
+          <div class="tech-flow-line"></div>
+        </div>
+
+        <div class="tech-layer tech-layer-output">
+          <div class="tech-layer-label"><i data-lucide="arrow-up-circle" class="lucide-inline"></i> 输出层</div>
+          <div class="tech-layer-items">
+            <div class="tech-chip chip-green">完整 .sln 项目</div>
+            <div class="tech-chip chip-green">编译通过的可执行文件</div>
+            <div class="tech-chip chip-green">变更日志 &amp; Diff</div>
+            <div class="tech-chip chip-green">合规审计报告</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tech-highlights">
+        <div class="tech-highlight reveal stagger-1">
+          <div class="tech-hl-num">01</div>
+          <div class="tech-hl-content">
+            <div class="tech-hl-title">反射式 Skill 发现</div>
+            <div class="tech-hl-desc">
+              通过 .NET Reflection 提取 DLL 中的类名、方法签名、参数类型，自动构建结构化的 Skill 描述文件。
+              LLM 在生成代码时严格引用这些真实签名，而非从训练数据中"回忆"。
+            </div>
+          </div>
+        </div>
+        <div class="tech-highlight reveal stagger-2">
+          <div class="tech-hl-num">02</div>
+          <div class="tech-hl-content">
+            <div class="tech-hl-title">模板 + AI 混合渲染</div>
+            <div class="tech-hl-desc">
+              结构性代码（MVVM 骨架、DI 注册、界面布局）由 Scriban 模板确定性生成。
+              仅业务逻辑层（工艺流程、异常处理策略）交由 LLM 在约束条件下填充。
+              两者的边界由清晰的接口契约定义。
+            </div>
+          </div>
+        </div>
+        <div class="tech-highlight reveal stagger-3">
+          <div class="tech-hl-num">03</div>
+          <div class="tech-hl-content">
+            <div class="tech-hl-title">编译驱动的自修复循环</div>
+            <div class="tech-hl-desc">
+              每一步输出不是"看起来正确的代码"，而是"通过 dotnet build 验证的代码"。
+              编译器错误信息会自动回传到 Agent 的上下文中，驱动 AI 自主修复，
+              直到 0 Error 达成或超过重试阈值。
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="workflow-section" id="workflow">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-tag">How it Works</div>
+        <h2 class="section-title">非侵入式，四步上线</h2>
+        <p class="section-subtitle">
+          不动底层一行代码。从导入资产到编译交付，全程无痛接入。
+        </p>
+      </div>
+
+      <div class="workflow-steps reveal" id="workflow-steps">
+        <div class="workflow-connector">
+          <div class="workflow-connector-fill" id="wf-fill"></div>
+        </div>
+
+        <div class="step-card" data-step="1">
+          <div class="step-number">
+            <span class="step-icon"><i data-lucide="folder-open"></i></span>
+            <span class="step-idx">1</span>
+          </div>
+          <div class="step-title">导入资产</div>
+          <div class="step-desc">将贵司的标准 UI 控件库、硬件驱动注册到 AutoForge 环境</div>
+          <div class="step-output">Ingest</div>
+        </div>
+
+        <div class="step-card" data-step="2">
+          <div class="step-number">
+            <span class="step-icon"><i data-lucide="blocks"></i></span>
+            <span class="step-idx">2</span>
+          </div>
+          <div class="step-title">意图拼装</div>
+          <div class="step-desc">输入新订单差异："新增两个 CCD 飞拍工位，复用视觉插件"</div>
+          <div class="step-output">Assemble</div>
+        </div>
+
+        <div class="step-card" data-step="3">
+          <div class="step-number">
+            <span class="step-icon"><i data-lucide="zap"></i></span>
+            <span class="step-idx">3</span>
+          </div>
+          <div class="step-title">生成胶水代码</div>
+          <div class="step-desc">精准生成实例化对象、ViewModel 绑定、I/O 监听等枯燥代码</div>
+          <div class="step-output">Generate</div>
+        </div>
+
+        <div class="step-card" data-step="4">
+          <div class="step-number">
+            <span class="step-icon"><i data-lucide="rocket"></i></span>
+            <span class="step-idx">4</span>
+          </div>
+          <div class="step-title">完美编译</div>
+          <div class="step-desc">代码无缝合并贵司 .sln 工程，一键编译，直接跑机</div>
+          <div class="step-output">Compile &amp; Run</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section" id="cta">
+    <div class="cta-glow-bg"></div>
+    <div class="container">
+      <div class="quote-block reveal">
+        <div class="quote-text">
+          "高级工程师的时间，应该用来研发你们下一代的高精度视觉插件和核心算法，
+          而不是被当成 <span class="quote-highlight">'JSON 翻译机'</span> 和
+          <span class="quote-highlight">'胶水代码修补匠'</span>。<br /><br />
+          引入 AutoForge，<strong>您不需要推翻现有的任何框架</strong>。
+          您原本需要一个高级工程师干 5 天的苦力活，
+          <strong>现在一个初级助理 10 分钟就能跑通</strong>。"
+        </div>
+        <div class="quote-author">
+          <div class="quote-avatar">AF</div>
+          <div>
+            <div class="quote-name">AutoForge 解决方案团队</div>
+            <div class="quote-role">面向 Top 100 设备商的专属方案</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="roi-stats reveal">
+        <div class="roi-item">
+          <div class="roi-value blue" id="roi-1">30x</div>
+          <div class="roi-label">适配效率提升</div>
+        </div>
+        <div class="roi-item">
+          <div class="roi-value green" id="roi-2">100%</div>
+          <div class="roi-label">报警/权限覆盖率</div>
+        </div>
+        <div class="roi-item">
+          <div class="roi-value amber" id="roi-3">0</div>
+          <div class="roi-label">对现有框架的侵入</div>
+        </div>
+      </div>
+
+      <div class="final-cta reveal">
+        <h2>让您最贵的人才，只做最值钱的事</h2>
+        <p>预约一次 30 分钟的专属演示，看 AutoForge 如何融入您的框架</p>
+
+        <div class="cta-btn-group">
+          <button class="btn-glow" id="btn-final-demo">
+            <span class="pulse"></span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="5 3 19 12 5 21 5 3" />
+            </svg>
+            预约专属演示
+          </button>
+          <button class="btn-ghost" id="btn-final-wp">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4" />
+              <polyline points="7 10 12 15 17 10" />
+              <line x1="12" y1="15" x2="12" y2="3" />
+            </svg>
+            下载技术白皮书
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container">
+      <ul class="footer-nav">
+        <li><a href="index.html">返回选择页</a></li>
+        <li><a href="#">文档中心</a></li>
+        <li><a href="#">GitHub</a></li>
+        <li><a href="#">API 参考</a></li>
+        <li><a href="#">合规认证</a></li>
+        <li><a href="#">隐私政策</a></li>
+      </ul>
+      <div class="footer-copy">© 2026 AutoForge. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+
+</html>
