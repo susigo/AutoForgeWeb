@@ -23,6 +23,7 @@
     <ul class="nav-menu">
       <li><a href="index.html">返回选择页</a></li>
       <li><a href="#pain">价值场景</a></li>
+      <li><a href="#evolution">提效进化</a></li>
       <li><a href="#compare">AI 对比</a></li>
       <li><a href="#hitl">HITL 机制</a></li>
       <li><a href="#tech">技术原理</a></li>
@@ -184,6 +185,146 @@
             </div>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 工业软件提效进化史时间轴 -->
+  <section class="evolution-section" id="evolution">
+    <div class="container">
+      <div class="evolution-header reveal">
+        <div class="section-tag">
+          <i data-lucide="clock" class="lucide-inline"></i>
+          Evolution Timeline
+        </div>
+        <h2>工业软件提效进化史：<br/>一张时间轴说明一切</h2>
+        <p class="subtitle">
+          以一个真实的工业交付场景为例：<strong>为一台三轴贴片机编写 MES 对接 + PLC 通讯 + 运动控制的完整上位机软件</strong>，不同能力阶段的交付时间与质量对比如下：
+        </p>
+      </div>
+
+      <div class="evolution-timeline reveal">
+        <!-- Phase 1: 无框架 -->
+        <div class="timeline-phase handmade">
+          <div class="timeline-node"></div>
+          <div class="timeline-card">
+            <div class="timeline-header">
+              <div class="phase-icon"><span class="emoji">🏭</span></div>
+              <h3>无框架（手工作坊）</h3>
+              <span class="duration">30 天</span>
+            </div>
+            <div class="timeline-content">
+              <p class="desc">高度依赖个人能力，质量波动极大</p>
+              <span class="quality-tag">⚠️ 质量不稳定</span>
+            </div>
+            <div class="timeline-footer">
+              <p class="essence"><strong>本质：</strong>靠资深工程师手写，代码难复用、难维护、人一走即成"屎山"</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Phase 2: 标准化 V1.0 -->
+        <div class="timeline-phase v1">
+          <div class="timeline-node"></div>
+          <div class="timeline-card">
+            <div class="timeline-header">
+              <div class="phase-icon"><span class="emoji">📦</span></div>
+              <h3>有基础框架（标准化 V1.0）</h3>
+              <span class="duration">15 天 / 7 天</span>
+            </div>
+            <div class="timeline-content">
+              <p class="desc">质量开始有下限，但仍依赖现场工程师经验</p>
+              <span class="quality-tag">📊 质量有下限</span>
+            </div>
+            <div class="timeline-footer">
+              <p class="essence"><strong>本质：</strong>底层模块开始标准化，工程师从"纯手写"变成"搭积木"</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Phase 3: 标准化 V2.0 -->
+        <div class="timeline-phase v2">
+          <div class="timeline-node"></div>
+          <div class="timeline-card">
+            <div class="timeline-header">
+              <div class="phase-icon"><span class="emoji">🚀</span></div>
+              <h3>有成熟框架（标准化 V2.0）</h3>
+              <span class="duration">3 天做完</span>
+            </div>
+            <div class="timeline-content">
+              <p class="desc">能交付，但常有瑕疵</p>
+              <span class="quality-tag">✓ 能交付</span>
+            </div>
+            <div class="timeline-footer">
+              <p class="essence"><strong>本质：</strong>大量能力已封装，只剩少量胶水代码；但赶工下容易因疲劳、沟通偏差产生隐患</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Phase 4: AutoForge -->
+        <div class="timeline-phase autoforge">
+          <div class="timeline-node"></div>
+          <div class="timeline-card">
+            <div class="timeline-header">
+              <div class="phase-icon">✦</div>
+              <h3>AutoForge（标准化 V3.0）</h3>
+              <span class="duration">0.5 天 → 3 天做好</span>
+            </div>
+            <div class="timeline-content">
+              <p class="desc">把时间从"写代码"转移到"验证与调优"，最终交付更稳</p>
+              <span class="quality-tag">✓✓ 高质量稳定交付</span>
+            </div>
+            <div class="timeline-footer">
+              <p class="essence"><strong>本质：</strong>AI 自动完成胶水代码与基础参数配置，专家把节省出的时间用于防撞测试、极限工况验证与逻辑微调</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Evolution Summary -->
+      <div class="evolution-summary reveal">
+        <h4><i data-lucide="lightbulb" class="lucide-inline"></i> 核心洞察</h4>
+        <p>
+          这条时间轴揭示了工业软件交付效率演进的本质：<strong>真正限制行业的，不只是"写得快不快"，而是"能不能在更短时间里稳定交付可上机、可交付、可维护的软件"。</strong>
+          <br><br>
+          这不是一个"AI 写代码"的概念故事，而是一笔非常直接的经营账：
+          <strong>30 天 → 15/7 天</strong> 意味着企业开始摆脱对个别高手的极端依赖；
+          <strong>15/7 天 → 3 天</strong> 意味着标准化能力达到头部厂商的工程化极限；
+          <strong>3 天做完但有瑕疵 → 3 天做好</strong> 意味着交付重心从低价值的重复编程，转向高价值的验证、调优与风险控制。
+        </p>
+      </div>
+
+      <!-- Business Value -->
+      <div class="business-value reveal">
+        <h4>工业现场最贵的，从来不是多写几百行代码，而是：</h4>
+        <div class="value-grid">
+          <div class="value-card">
+            <div class="icon">💥</div>
+            <h5>撞机</h5>
+            <p>设备损坏、产线停工</p>
+          </div>
+          <div class="value-card">
+            <div class="icon">⏹️</div>
+            <h5>停线</h5>
+            <p>每分钟都是真金白银</p>
+          </div>
+          <div class="value-card">
+            <div class="icon">🔧</div>
+            <h5>售后返工</h5>
+            <p>人力成本与声誉损失</p>
+          </div>
+          <div class="value-card">
+            <div class="icon">👤</div>
+            <h5>专家绑定</h5>
+            <p>关键人才被重复劳动消耗</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="evolution-summary reveal" style="margin-top: 40px;">
+        <p style="text-align: center; font-size: 1rem;">
+          因此，行业真正需要的不是一个"更会写代码"的 AI，而是一个<strong style="color: var(--green-light);">把不确定编码劳动压缩到最短，把确定性交付质量抬到最高</strong>的系统。
+        </p>
       </div>
     </div>
   </section>
